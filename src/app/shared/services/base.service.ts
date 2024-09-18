@@ -29,15 +29,13 @@ export class BaseService<T> {
    * @description
    * Base path for the server. This is the URL of the server.
    */
-  protected basePath: string=
-    `${environment.serverBasePath}`;
+  protected basePath: string= `${environment.serverBasePath}`;
   /**
    * @property resourceEndPoint
    * @description
+   * The endpoint for the resource. This is the URL path for the resource.
    */
-  * The endpoint for the resource. This is the URL path for the resource.
-  protected resourceEndPoint: string=
-    '/resources';
+  protected resourceEndPoint: string= '/resources';
   /**
    * @method handleError
    * @description
@@ -50,13 +48,11 @@ export class BaseService<T> {
     if (error.error instanceof ErrorEvent) {
       console.error(`An error occurred: ${error.error.message}`);
     } else {
-      console.error(`Backend returned code ${error.status}, body was:
-${error.error}`);
+      console.error(`Backend returned code ${error.status}, body was: ${error.error}`);
     }
-    again later.
+    return throwError(() => new Error('Something bad happened; please try  again later.'));
   }
-  return throwError(() => new Error('Something bad happened; please try
-  '));
+
   /**
    * @method resourcePath
    * @description
