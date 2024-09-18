@@ -8,23 +8,24 @@
       <p>Explore our selection of minor vehicles available for rent or purchase.</p>
     </div>
 
-    <!-- cambiar a card -->
+    <!-- cambiar a card a-->
     <!-- For -->
 
-    <div class="container mr-auto px-4.5 py-6 flex items-center justify-between">
-      <div >
-        <div class="bg-white shadow-md rounded-lg p-4">
-
-          <div class="flex justify-between items-center">
-            <span class="font-light text-gray-600">Vehicle</span>
-          </div>
-          <div class="mt-2">
-            <p class="text-customGreen font-bold rounded">{{vehicle.name}}</p>
-            <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Nullam nec nunc nec nisi.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div *ngFor="let vehicle of vehicleData" class="bg-white shadow-md rounded-lg p-4">
+        <div class="flex flex-col items-center">
+          <span class="text-customGreen font-bold mb-2">{{ vehicle.name }}</span>
+          <img [alt]="vehicle.name"
+               [src]="getLogoUrl(vehicle.url)"
+               class="w-32 h-32 object-cover rounded-lg"
+               mat-card-image />
+          <div class="mt-2 text-center">
+            <p class="text-gray-500 rounded">{{ vehicle.description }}</p>
           </div>
         </div>
       </div>
     </div>
+
 
     <div class="container mr-auto px-4.5 py-6 flex items-center justify-between">
       <button class="bg-customGreen hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
