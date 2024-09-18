@@ -5,11 +5,12 @@ import {MatButton} from "@angular/material/button";
 import {NgIf} from "@angular/common";
 import {HeaderComponent} from "./public/components/header/header.component";
 import {HeaderAcquirerComponent} from "./public/components/header-acquirer/header-acquirer.component";
+import {VehiclesComponent} from "./public/pages/vehicles/vehicles.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatMenu, MatMenuItem, MatButton, MatMenuTrigger, NgIf, HeaderComponent, HeaderAcquirerComponent],
+  imports: [RouterOutlet, MatMenu, MatMenuItem, MatButton, MatMenuTrigger, NgIf, HeaderComponent, HeaderAcquirerComponent, VehiclesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
