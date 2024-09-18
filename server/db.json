@@ -8,12 +8,12 @@
     {
       "name": "Scooter Speedster",
       "description": "Scooter eléctrico con velocidad máxima de 25 km/h y autonomía de 20 km.",
-      "url": "https://scooter-speedster.com"
+      "url": "https://bmx.com"
     },
     {
       "name": "Mountain Bike Explorer",
       "description": "Bicicleta de montaña con suspensión doble para los terrenos más difíciles.",
-      "url": "https://mountain-bike-explorer.com"
+      "url": "https://bmx.com"
     }
   ]
 }
