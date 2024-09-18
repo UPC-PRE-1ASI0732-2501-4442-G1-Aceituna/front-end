@@ -1,0 +1,19 @@
+{
+  "vehicles": [
+    {
+      "name": "BMX Pro",
+      "description": "Bicicleta BMX diseñada para hacer trucos y saltos extremos.",
+      "url": "https://bmx.com"
+    },
+    {
+      "name": "Scooter Speedster",
+      "description": "Scooter eléctrico con velocidad máxima de 25 km/h y autonomía de 20 km.",
+      "url": "https://scooter-speedster.com"
+    },
+    {
+      "name": "Mountain Bike Explorer",
+      "description": "Bicicleta de montaña con suspensión doble para los terrenos más difíciles.",
+      "url": "https://mountain-bike-explorer.com"
+    }
+  ]
+}
