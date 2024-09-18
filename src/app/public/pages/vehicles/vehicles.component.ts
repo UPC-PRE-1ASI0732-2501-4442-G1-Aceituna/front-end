@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Vehicle} from "../../../movilizing/model/vehicle.entity";
 
 @Component({
   selector: 'app-vehicles',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './vehicles.component.css'
 })
 export class VehiclesComponent {
-
+@Input() vehicle!: Vehicle;
 }

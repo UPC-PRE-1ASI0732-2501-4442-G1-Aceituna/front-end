@@ -6,6 +6,7 @@ import {NgIf} from "@angular/common";
 import {HeaderComponent} from "./public/components/header/header.component";
 import {HeaderAcquirerComponent} from "./public/components/header-acquirer/header-acquirer.component";
 import {VehiclesComponent} from "./public/pages/vehicles/vehicles.component";
+import {Vehicle} from "./movilizing/model/vehicle.entity";
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import {VehiclesComponent} from "./public/pages/vehicles/vehicles.component";
 export class AppComponent {
   title = 'ecomovil-LandingPage';
   menuOpen = false;
+
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
