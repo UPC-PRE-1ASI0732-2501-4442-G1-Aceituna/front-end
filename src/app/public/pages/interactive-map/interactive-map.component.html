@@ -23,7 +23,8 @@
         <!-- Marcadores -->
         <map-marker *ngFor="let marker of markers"
                     [position]="marker.position"
-                    title="Vehicle"></map-marker>
+                    title="Vehicle"
+                    (mapClick)="markerClick()"></map-marker>
       </google-map>
 
       <div>Latitude: {{display?.lat}}</div>

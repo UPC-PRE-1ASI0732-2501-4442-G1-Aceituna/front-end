@@ -1,5 +1,6 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {GoogleMap, MapMarker} from "@angular/google-maps";
+import {Router} from "@angular/router";
 import {NgForOf} from "@angular/common";
 import {VehicleService} from "../../../movilizing/services/vehicle.service";
 import {Vehicle} from "../../../movilizing/model/vehicle.entity";
@@ -18,29 +19,25 @@ export class InteractiveMapComponent implements OnInit {
   protected vehicleData: Vehicle[] = [];
 
   private vehicleService: VehicleService = inject(VehicleService);
+  private router: Router = inject(Router);
 
 
-  // Lista de marcadores
   markers: Array<{ position: google.maps.LatLngLiteral }> = [];
 
-  // Método para inicializar los marcadores
   ngOnInit() {
     this.addMarkerAtPosition(-12.098089934437155, -77.05815168994613);
     this.loadMarkers();
 
   }
 
-  // Mover el centro del mapa al hacer clic
   moveMap(event: google.maps.MapMouseEvent) {
     this.center = event.latLng!.toJSON();
   }
 
-  // Mostrar la posición en latitud y longitud mientras se mueve el ratón
   move(event: google.maps.MapMouseEvent) {
     this.display = event.latLng!.toJSON();
   }
 
-  // Agregar un marcador al hacer clic en el mapa
   addMarker(event: google.maps.MapMouseEvent) {
     if (event.latLng) {
       const newMarker = {
@@ -50,12 +47,15 @@ export class InteractiveMapComponent implements OnInit {
     }
   }
 
-  // Método para agregar un marcador en una posición específica
   addMarkerAtPosition(lat: number, lng: number) {
     const newMarker = {
       position: { lat, lng }
     };
     this.markers.push(newMarker);
+  }
+
+  markerClick() {
+    this.router.navigate(['/myVehicles']); // Redirige a /myVehicles sin parámetros
   }
 
   private loadMarkers() {
