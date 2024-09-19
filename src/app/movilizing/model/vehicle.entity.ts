@@ -7,6 +7,8 @@ export class Vehicle {
   rentailPrice: number;
   description: string;
   url: string;
+    lat: number;
+    lng: number;
 
   constructor(vehicle:{
     id?: number,
@@ -16,7 +18,10 @@ export class Vehicle {
     salePrice?: number,
     rentailPrice?: number,
     description?: string,
-    url?: string}){
+    url?: string,
+    lat?: number,
+    lng?: number
+  }){
     this.id = vehicle.id || 0;
     this.name = vehicle.name || '';
     this.type = vehicle.type || '';
@@ -25,6 +30,8 @@ export class Vehicle {
     this.rentailPrice = vehicle.rentailPrice || 0;
     this.description = vehicle.description || '';
     this.url = vehicle.url || 'https://bmx.com';
+    this.lat = vehicle.lat || 0;
+    this.lng = vehicle.lng || 0;
   }
 
   /**

@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {GoogleMap, MapMarker} from "@angular/google-maps";
 import {NgForOf} from "@angular/common";
+import {VehicleService} from "../../../movilizing/services/vehicle.service";
+import {Vehicle} from "../../../movilizing/model/vehicle.entity";
 
 @Component({
   selector: 'app-interactive-map',
@@ -13,6 +15,10 @@ export class InteractiveMapComponent implements OnInit {
   center: google.maps.LatLngLiteral = { lat: -12.098089934437155, lng: -77.05815168994613 };
   zoom = 12;
   display: google.maps.LatLngLiteral | undefined;
+  protected vehicleData: Vehicle[] = [];
+
+  private vehicleService: VehicleService = inject(VehicleService);
+
 
   // Lista de marcadores
   markers: Array<{ position: google.maps.LatLngLiteral }> = [];
@@ -20,6 +26,8 @@ export class InteractiveMapComponent implements OnInit {
   // Método para inicializar los marcadores
   ngOnInit() {
     this.addMarkerAtPosition(-12.098089934437155, -77.05815168994613);
+    this.loadMarkers();
+
   }
 
   // Mover el centro del mapa al hacer clic
@@ -48,5 +56,13 @@ export class InteractiveMapComponent implements OnInit {
       position: { lat, lng }
     };
     this.markers.push(newMarker);
+  }
+
+  private loadMarkers() {
+    this.vehicleService.getAll().subscribe((response: Vehicle[]) => {
+      response.forEach((vehicle: Vehicle) => {
+        this.addMarkerAtPosition(vehicle.lat, vehicle.lng);
+      });
+    });
   }
 }

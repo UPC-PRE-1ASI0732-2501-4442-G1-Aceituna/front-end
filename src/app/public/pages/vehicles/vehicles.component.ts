@@ -36,20 +36,9 @@ export class VehiclesComponent implements OnInit {
   private getAllVehicles() {
     this.vehicleService.getAll().subscribe((response: Vehicle[]) => {
       console.log(response);
-      this.vehicleData = response;  // Asigna la respuesta (que es un arreglo) a vehicleData
+      this.vehicleData = response;
     });
   }
 
-  //posibleadd
-  public addVehicle(newVehicle: Vehicle): void {
-    this.vehicleService.create(newVehicle).subscribe({
-      next: (response: Vehicle) => {
-        this.vehicleData = [...this.vehicleData, response];
-      },
-      error: (err) => {
-        console.error('Error creating vehicle:', err);
-      }
-    });
-  }
 
 }
