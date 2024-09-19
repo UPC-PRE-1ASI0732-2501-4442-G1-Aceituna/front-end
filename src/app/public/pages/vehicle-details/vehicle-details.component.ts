@@ -1,10 +1,11 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {NgIf} from "@angular/common";
+import {NgIf, UpperCasePipe} from "@angular/common";
 import {Vehicle} from "../../../movilizing/model/vehicle.entity";
 import { VehicleService } from '../../../movilizing/services/vehicle.service';
 import {LogoApiService} from "../../../shared/services/logo-api.service";
 import {MatCardImage} from "@angular/material/card";
+import {RatingModule} from "primeng/rating";
 
 @Component({
   selector: 'app-vehicle-details',
@@ -13,7 +14,9 @@ import {MatCardImage} from "@angular/material/card";
     FormsModule,
     NgIf,
     ReactiveFormsModule,
-    MatCardImage
+    MatCardImage,
+    RatingModule,
+    UpperCasePipe
   ],
   templateUrl: './vehicle-details.component.html',
   styleUrl: './vehicle-details.component.css'
@@ -22,6 +25,11 @@ export class VehicleDetailsComponent implements OnInit{
   protected vehicleData: Vehicle | null = null;
   private vehicleService: VehicleService = inject(VehicleService);
   private Logo = inject(LogoApiService);
+  value?: number;
+
+  randomRating() {
+    this.value = Math.floor(Math.random() * 6);
+  }
 
   getLogoUrl(url: string | undefined) {
     return this.Logo.getUrlToLogo(url);
@@ -30,6 +38,7 @@ export class VehicleDetailsComponent implements OnInit{
   ngOnInit(): void {
     //cambiar luego xd cuanod juan termine el filter
     this.getVehiclebyId(1);
+    this.randomRating()
   }
 
   private getVehiclebyId(id: number) {

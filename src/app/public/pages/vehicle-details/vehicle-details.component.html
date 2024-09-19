@@ -12,7 +12,7 @@
 
       <!-- Columna izquierda: Información del vehículo -->
       <div class="flex flex-col px-4 py-4 col-span-1 space-y-4">
-        <p>{{vehicleData?.type}}</p>
+        <p>{{vehicleData?.type | uppercase}}</p>
         <p>{{vehicleData?.name}}</p>
         <p>Year: {{vehicleData?.year}}</p>
         <p>Price: {{vehicleData?.salePrice}}</p>
@@ -32,6 +32,12 @@
                class="w-32 h-32 object-cover rounded-lg"
                mat-card-image />
         </div>
+
+        <h3 class="text-left w-full">General Review</h3>
+
+        <p-rating [(ngModel)]="value" [readonly]="true" [cancel]="false" />
+
+
 
 
 
