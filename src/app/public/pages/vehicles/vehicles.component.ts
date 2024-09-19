@@ -4,13 +4,15 @@ import {VehicleService} from "../../../movilizing/services/vehicle.service";
 import {NgForOf} from "@angular/common";
 import {LogoApiService} from "../../../shared/services/logo-api.service";
 import {MatCardImage} from "@angular/material/card";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-vehicles',
   standalone: true,
   imports: [
     NgForOf,
-    MatCardImage
+    MatCardImage,
+    RouterLink
   ],
   templateUrl: './vehicles.component.html',
   styleUrl: './vehicles.component.css'
@@ -19,6 +21,8 @@ export class VehiclesComponent implements OnInit {
   protected vehicleData: Vehicle[] = [];
   private vehicleService: VehicleService = inject(VehicleService);
   private Logo = inject(LogoApiService);
+  options = [
+    {path: '/postVehicle', title: 'Post Vehicle'}]
 
   getLogoUrl(url: string) {
     return this.Logo.getUrlToLogo(url);

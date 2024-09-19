@@ -1,5 +1,5 @@
 <section id="vehiclesSection">
-  <div class="container mx-auto px-28 py-6 flex-wrap items-center justify-between">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-28 py-6 flex-wrap items-center justify-between">
     <div class="container mr-auto px-4.5 py-4.5 flex-wrap items-center justify-between">
       <h1 class="text-4xl mr-auto font-bold text-customGreen">Post Details</h1>
     </div>
@@ -117,7 +117,7 @@
 
         <!-- Botón Add -->
         <div class="container mr-auto px-4.5 py-6 flex items-center justify-between">
-          <button type="submit" [disabled]="vehicleForm.invalid" class="bg-customGreen hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-full">
+          <button type="submit" [disabled]="vehicleForm.invalid" class="bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-full">
             Save Vehicle
           </button>
 
@@ -126,4 +126,5 @@
       </div>
     </form>
   </div>
+
 </section>
