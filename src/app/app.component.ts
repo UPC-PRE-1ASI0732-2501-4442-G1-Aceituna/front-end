@@ -8,11 +8,12 @@ import {HeaderAcquirerComponent} from "./public/components/header-acquirer/heade
 import {VehiclesComponent} from "./public/pages/vehicles/vehicles.component";
 import {Vehicle} from "./movilizing/model/vehicle.entity";
 import {VehiclePostComponent} from "./public/pages/vehicle-post/vehicle-post.component";
+import {InteractiveMapComponent} from "./public/pages/interactive-map/interactive-map.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatMenu, MatMenuItem, MatButton, MatMenuTrigger, NgIf, HeaderComponent, HeaderAcquirerComponent, VehiclesComponent, VehiclePostComponent],
+  imports: [RouterOutlet, MatMenu, MatMenuItem, MatButton, MatMenuTrigger, NgIf, HeaderComponent, HeaderAcquirerComponent, VehiclesComponent, VehiclePostComponent, InteractiveMapComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
