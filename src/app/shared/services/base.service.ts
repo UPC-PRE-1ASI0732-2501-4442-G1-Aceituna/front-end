@@ -113,4 +113,16 @@ export class BaseService<T> {
     return this.http.get<Array<T>>(this.resourcePath(), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+
+  /**
+   * @method getbyID
+   * @description
+   * Gets a resource by its id from the server.
+   * @param {any} id - The id of the resource to be retrieved.
+   * @returns {Observable<T>} - An observable with the resource.
+   */
+  public getbyId(id: any): Observable<T> {
+    return this.http.get<T>(`${this.resourcePath()}/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
 }
