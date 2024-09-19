@@ -35,7 +35,6 @@
       "url": "https://bmx.com",
       "lat": -12.097423677499346,
       "lng": -77.04481244087219
-
     },
     {
       "id": 4,
@@ -82,8 +81,20 @@
       "rentailPrice": 12312,
       "description": "sdadasd",
       "url": "https://bmx.com",
-      "lat": -12.097423607490346,
+      "lat": -12.097423607490345,
       "lng": -77.04481244087219
-      }
+    },
+    {
+      "id": 8,
+      "name": "La superBicicleta",
+      "type": "rollskater",
+      "year": 2021,
+      "salePrice": 2000,
+      "rentailPrice": 3000,
+      "description": "Es la meejor BICI",
+      "url": "https://bmx.com",
+      "lat": -12.097343278386779,
+      "lng": -77.07080274350476
+    }
   ]
 }

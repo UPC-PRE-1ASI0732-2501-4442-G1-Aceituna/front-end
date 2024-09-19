@@ -34,9 +34,7 @@ export class VehiclePostComponent implements OnInit {
 
   constructor() {}
 
-  getLogoUrl(url: string) {
-    return this.Logo.getUrlToLogo(url);
-  }
+
 
 
   ngOnInit(): void {
@@ -50,19 +48,46 @@ export class VehiclePostComponent implements OnInit {
     });
   }
 
+  private getCurrentLocation(): Promise<{ lat: number, lng: number }> {
+    return new Promise((resolve, reject) => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            resolve({
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            });
+          },
+          (error) => {
+            console.error('Error', error);
+            reject(error);
+          }
+        );
+      } else {
+        reject('Geolocalización no soportada');
+      }
+    });
+  }
+
   public onSubmit(): void {
     if (this.newVehicle.description && this.newVehicle.type && this.newVehicle.year && this.newVehicle.salePrice && this.newVehicle.rentailPrice && this.newVehicle.name) {
-      this.newVehicle.url = this.newVehicle.url || 'https://default-url.com';
+      this.getCurrentLocation().then((coords) => {
+        this.newVehicle.lat = coords.lat;
+        this.newVehicle.lng = coords.lng;
+        this.newVehicle.url = this.newVehicle.url || 'https://default-url.com';
 
-      this.vehicleService.create(this.newVehicle).subscribe({
-        next: (response: Vehicle) => {
-          this.vehicleData = [...this.vehicleData, response];
-          this.newVehicle = new Vehicle({});
-          this.router.navigate(['/myVehicles']);
-        },
-        error: (err) => {
-          console.error('Error creando el vehículo:', err);
-        }
+        this.vehicleService.create(this.newVehicle).subscribe({
+          next: (response: Vehicle) => {
+            this.vehicleData = [...this.vehicleData, response];
+            this.newVehicle = new Vehicle({});
+            this.router.navigate(['/myVehicles']);
+          },
+          error: (err) => {
+            console.error('Error creando el vehículo:', err);
+          }
+        });
+      }).catch((error) => {
+        console.error('Error al obtener la ubicación: ', error);
       });
     }
   }
