@@ -47,7 +47,7 @@ export class VehiclePostComponent implements OnInit {
       this.vehicleData = response;
     });
   }
-
+//add new vehicle
   private getCurrentLocation(): Promise<{ lat: number, lng: number }> {
     return new Promise((resolve, reject) => {
       if (navigator.geolocation) {
