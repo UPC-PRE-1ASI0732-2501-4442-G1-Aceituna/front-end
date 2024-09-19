@@ -30,9 +30,7 @@
               "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
-            "scripts": [
-              "https://unpkg.com/@googlemaps/extended-component-library@0.6"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
