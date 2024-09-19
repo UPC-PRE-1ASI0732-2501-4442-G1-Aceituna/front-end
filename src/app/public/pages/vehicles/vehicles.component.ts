@@ -36,5 +36,16 @@ export class VehiclesComponent implements OnInit {
     });
   }
 
+  //posibleadd
+  public addVehicle(newVehicle: Vehicle): void {
+    this.vehicleService.create(newVehicle).subscribe({
+      next: (response: Vehicle) => {
+        this.vehicleData = [...this.vehicleData, response];
+      },
+      error: (err) => {
+        console.error('Error creating vehicle:', err);
+      }
+    });
+  }
 
 }
