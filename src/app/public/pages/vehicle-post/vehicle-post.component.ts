@@ -1,0 +1,71 @@
+import {Component, inject, OnInit} from '@angular/core';
+import {MatCardImage} from "@angular/material/card";
+import {NgForOf, NgIf} from "@angular/common";
+import {Vehicle} from "../../../movilizing/model/vehicle.entity";
+import {VehicleService} from "../../../movilizing/services/vehicle.service";
+import {LogoApiService} from "../../../shared/services/logo-api.service";
+import {FormsModule} from "@angular/forms";
+import {MatMenuItem} from "@angular/material/menu";
+import {Router, RouterLink} from "@angular/router";
+
+@Component({
+  selector: 'app-vehicle-post',
+  standalone: true,
+  imports: [
+    MatCardImage,
+    NgForOf,
+    FormsModule,
+    NgIf,
+    MatMenuItem,
+    RouterLink
+  ],
+  templateUrl: './vehicle-post.component.html',
+  styleUrl: './vehicle-post.component.css'
+})
+export class VehiclePostComponent implements OnInit {
+  protected vehicleData: Vehicle[] = [];
+  public newVehicle: Vehicle = new Vehicle({});
+  private vehicleService: VehicleService = inject(VehicleService);
+  private Logo = inject(LogoApiService);
+  private router = inject(Router);
+
+  options = [
+    {path: '/myVehicles', title: 'My Vehicles'}]
+
+  constructor() {}
+
+  getLogoUrl(url: string) {
+    return this.Logo.getUrlToLogo(url);
+  }
+
+
+  ngOnInit(): void {
+    this.getAllVehicles();
+  }
+
+  private getAllVehicles() {
+    this.vehicleService.getAll().subscribe((response: Vehicle[]) => {
+      console.log(response);
+      this.vehicleData = response;
+    });
+  }
+
+  public onSubmit(): void {
+    if (this.newVehicle.description && this.newVehicle.type && this.newVehicle.year && this.newVehicle.salePrice && this.newVehicle.rentailPrice && this.newVehicle.name) {
+      this.newVehicle.url = this.newVehicle.url || 'https://default-url.com';
+
+      this.vehicleService.create(this.newVehicle).subscribe({
+        next: (response: Vehicle) => {
+          this.vehicleData = [...this.vehicleData, response];
+          this.newVehicle = new Vehicle({});
+          this.router.navigate(['/myVehicles']);
+        },
+        error: (err) => {
+          console.error('Error creando el vehículo:', err);
+        }
+      });
+    }
+  }
+
+
+}
