@@ -1,4 +1,50 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "name": "Juan",
+      "phone": "123456781",
+      "email": "example@gmail.com",
+      "password": "admin",
+      "ruc": "12345678901",
+      "role": "student",
+      "url": "https://bmx.com",
+      "apiId": "u1"
+    },
+    {
+      "id": 2,
+      "name": "David",
+      "phone": "123456789",
+      "email": "juancalijesus@gmail.com",
+      "password": "user",
+      "ruc": "12345678902",
+      "role": "acquirer",
+      "url": "https://bmx.com",
+      "apiId": "u2"
+    },
+    {
+      "id": 3,
+      "name": "Jorge",
+      "phone": "123456789",
+      "email": "jorgito@gmail.com",
+      "password": "pass123",
+      "ruc": "12345678903",
+      "role": "acquirer",
+      "url": "https://bmx.com",
+      "apiId": "u3"
+    },
+    {
+      "id": 4,
+      "name": "Beth",
+      "phone": "123456799",
+      "email": "betun@gmail.com",
+      "password": "pass1234",
+      "ruc": "12345678904",
+      "role": "student",
+      "url": "https://bmx.com",
+      "apiId": "u4"
+    }
+  ],
   "vehicles": [
     {
       "id": 1,
@@ -95,6 +141,19 @@
       "url": "https://bmx.com",
       "lat": -12.097343278386779,
       "lng": -77.07080274350476
+    },
+    {
+      "id": 9,
+      "name": "BMX 2024",
+      "type": "Bike",
+      "year": 2013,
+      "salePrice": 500,
+      "rentailPrice": 10,
+      "description": "10 LA HORA",
+      "url": "https://bmx.com",
+      "lat": -12.1470976,
+      "lng": -76.9425408,
+      "apiId": "v1"
     }
   ]
 }
