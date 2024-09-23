@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {ReactiveFormsModule, FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {ReactiveFormsModule, FormGroup, FormControl, Validators} from '@angular/forms';
 import {Profile} from "../../model/profile";
 import {JsonPipe, NgIf} from "@angular/common";
 
