@@ -1,0 +1,16 @@
+
+.page{
+  display: flex;
+}
+
+
+.componente {
+  flex: 1;
+  max-width: 950px;
+  min-width: 400px;
+}
+
+.title{
+  margin-top: 20px;
+}
+
