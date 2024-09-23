@@ -4,6 +4,7 @@ import {VehiclePostComponent} from "./public/pages/vehicle-post/vehicle-post.com
 import {ProfilePageComponent} from "./public/pages/profile-page/profile-page.component";
 import {DashboardPageComponent} from "./public/pages/dashboard-page/dashboard-page.component";
 import {PlanesPageComponent} from "./public/pages/planes-page/planes-page.component";
+import {PaymentPageComponent} from "./public/pages/payment-page/payment-page.component";
 
 export const routes: Routes = [
   {path:'myVehicles', component: VehiclesComponent},
@@ -17,5 +18,6 @@ export const routes: Routes = [
       }
     ]
   },
+  { path: 'payment', component: PaymentPageComponent }, // Ruta para "payment"
   { path: '', component: VehiclesComponent }
 ];
