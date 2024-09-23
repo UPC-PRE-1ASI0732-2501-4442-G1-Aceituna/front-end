@@ -1,5 +1,4 @@
-import {inject, Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {Injectable} from '@angular/core';
 import {Profile} from "../model/profile";
 import {BaseService} from "../../shared/services/base.service";
 
