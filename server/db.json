@@ -97,6 +97,29 @@
       "lng": -77.07080274350476
     }
   ],
+  "planes": [
+    {
+      "name": "Cachimbo",
+      "postMonth": 2,
+      "assistanceType": "Basic",
+      "cost": 1.99,
+      "featured": false
+    },
+    {
+      "name": "Universitario",
+      "postMonth": 10,
+      "assistanceType": "Prior",
+      "cost": 5.99,
+      "featured": true
+    },
+    {
+      "name": "Graduado",
+      "postMonth": 100,
+      "assistanceType": "Attendance",
+      "cost": 19.99,
+      "featured": true
+    }
+  ],
   "profile": [
     {
       "id": 1,
