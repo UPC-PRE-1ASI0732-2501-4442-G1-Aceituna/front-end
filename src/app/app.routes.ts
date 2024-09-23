@@ -14,5 +14,6 @@ export const routes: Routes = [
         component: ProfilePageComponent
       }
     ]
-  }
+  },
+  { path: '', component: VehiclesComponent }
 ];
