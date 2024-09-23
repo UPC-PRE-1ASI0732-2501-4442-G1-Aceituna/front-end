@@ -1,0 +1,71 @@
+
+.card-container{
+  display: flex ;
+  justify-content: space-between;
+  gap: 10px;            /* Espacio entre las casillas */
+  margin: 10px;            /* Espacio entre los componentes */
+  padding: 10px;           /* Espacio interior de los componentes */
+  box-sizing: border-box;  /* Incluye el padding en el tamaño total del elemento */
+  border-radius: 1%;
+  border: 1px solid #939393; /*!* Solo para visualización *!*/
+}
+
+.group-label-placeholder {
+  display: flex;
+  flex-direction: column; /* Coloca el label y el input en columna */
+  margin-bottom: 15px;    /* Espaciado entre cada campo */
+}
+
+.group-label-placeholder > input {
+  max-width: 250px;
+}
+
+.columnaFor {
+  flex: 1;                /* Cada columna ocupa el mismo ancho base */
+
+  margin-right: 20px; /* Separación entre el formulario y la imagen */
+  /*box-sizing: border-box; !* Incluye el padding en el tamaño total del elemento *!*/
+  /*border: 1px solid black; !* Solo para visualización *!*/
+  margin-left: 10px;
+
+}
+
+.columnaImag {
+  flex: 0 0 150px; /* La imagen ocupa un ancho fijo */
+  display: flex; /* Hacemos que la columna también sea flex */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center; /* Centra verticalmente el contenido */
+  /*box-sizing: border-box; !* Incluye el padding en el tamaño total del elemento *!*/
+  /*border: 1px solid black; !* Solo para visualización *!*/
+}
+
+.columnaImag > img {
+  max-width: 70%;
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  /*border: 1px solid black; !* !* Solo para visualización *!*!*/
+}
+
+.buttonSubmit{
+  background-color: #1ACD81;
+  border: 1px solid #939393;
+  border-radius: 5px;
+  color: #F7F5F9;
+  min-height: 25px;
+  margin-bottom: 10px;
+  margin-top: 18px;
+  width: 100%;
+}
+
+input {
+    border: 1px solid gray; /* Borde negro */
+    padding: 4px;          /* Espacio interior del campo */
+    margin-bottom: 15px;     /* Separación inferior entre campos */
+    width: 100%;             /* Hacer que los campos ocupen todo el ancho del contenedor */
+    box-sizing: border-box;  /* Incluir el borde y el padding dentro del ancho total */
+     border-radius: 7px;
+}
+
+input:focus {
+  border-color: #4CAF50;   /* Cambiar el color del borde cuando el campo está en foco */
+  outline: none;           /* Quitar el contorno predeterminado del navegador */
+}
