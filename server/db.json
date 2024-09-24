@@ -2,7 +2,8 @@
   "users": [
     {
       "id": 1,
-      "name": "Juan",
+      "firstName": "Juan",
+      "lastName": "Calisaya",
       "phone": "123456781",
       "email": "example@gmail.com",
       "password": "admin",
@@ -13,7 +14,8 @@
     },
     {
       "id": 2,
-      "name": "David",
+      "firstName": "David",
+      "lastName": "Gallo",
       "phone": "123456789",
       "email": "juancalijesus@gmail.com",
       "password": "user",
@@ -24,7 +26,8 @@
     },
     {
       "id": 3,
-      "name": "Jorge",
+      "firstName": "Jorge",
+      "lastName": "Hidalgo",
       "phone": "123456789",
       "email": "jorgito@gmail.com",
       "password": "pass123",
@@ -35,7 +38,8 @@
     },
     {
       "id": 4,
-      "name": "Beth",
+      "firstName": "Beth",
+      "lastName": "Oneglio",
       "phone": "123456799",
       "email": "betun@gmail.com",
       "password": "pass1234",
