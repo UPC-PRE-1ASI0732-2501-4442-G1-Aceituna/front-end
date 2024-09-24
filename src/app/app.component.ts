@@ -19,7 +19,7 @@ import {VehicleDetailsComponent} from "./public/pages/vehicle-details/vehicle-de
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'ecomovil-LandingPage';
+  title = 'EcoMovil';
   menuOpen = false;
 
 
