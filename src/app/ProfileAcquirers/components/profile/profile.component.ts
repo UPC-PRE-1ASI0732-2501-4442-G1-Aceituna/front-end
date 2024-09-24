@@ -16,7 +16,7 @@ export class ProfileComponent {
 
   profileForm = new FormGroup({
     name: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
     phone: new FormControl('', Validators.required),
   });
 
@@ -34,4 +34,5 @@ export class ProfileComponent {
     this.profile.email = this.profileForm.get('email')?.value ?? '';
     this.profile.phone = this.profileForm.get('phone')?.value ?? '';
   }
+
 }
