@@ -19,7 +19,7 @@ import {PlanesPageComponent} from "./public/pages/planes-page/planes-page.compon
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'ecomovil-LandingPage';
+  title = 'EcoMovil';
   menuOpen = false;
 
 
