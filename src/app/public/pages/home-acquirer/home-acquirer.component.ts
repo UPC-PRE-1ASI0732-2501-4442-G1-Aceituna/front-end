@@ -1,36 +1,36 @@
 import {Component, inject, Input, OnInit} from '@angular/core';
-import {Vehicle} from "../../../movilizing/model/vehicle.entity";
-import {VehicleService} from "../../../movilizing/services/vehicle.service";
+import {HeaderComponent} from "../../components/header/header.component";
+import {MatCardImage} from "@angular/material/card";
 import {NgForOf} from "@angular/common";
 import {LogoApiService} from "../../../shared/services/logo-api.service";
-import {MatCardImage} from "@angular/material/card";
 import {RouterLink} from "@angular/router";
-import {HeaderComponent} from "../../components/header/header.component";
+import {VehicleService} from "../../../movilizing/services/vehicle.service";
+import {Vehicle} from "../../../movilizing/model/vehicle.entity";
+import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
 
 @Component({
-  selector: 'app-vehicles',
+  selector: 'app-home-acquirer',
   standalone: true,
   imports: [
-    NgForOf,
+    HeaderComponent,
     MatCardImage,
-    RouterLink,
-    HeaderComponent
+    NgForOf,
+    HeaderAcquirerComponent,
+    RouterLink
   ],
-  templateUrl: './vehicles.component.html',
-  styleUrl: './vehicles.component.css'
+  templateUrl: './home-acquirer.component.html',
+  styleUrl: './home-acquirer.component.css'
 })
-export class VehiclesComponent implements OnInit {
+export class HomeAcquirerComponent {
   protected vehicleData: Vehicle[] = [];
   private vehicleService: VehicleService = inject(VehicleService);
   private Logo = inject(LogoApiService);
-  options = [
-    {path: '/postVehicle', title: 'Post Vehicle'}]
 
   getLogoUrl(url: string) {
     return this.Logo.getUrlToLogo(url);
   }
-
-
+  options = [
+    {path: '/postVehicle', title: 'Post Vehicle'}]
   ngOnInit(): void {
     this.getAllVehicles();
   }
@@ -41,6 +41,4 @@ export class VehiclesComponent implements OnInit {
       this.vehicleData = response;
     });
   }
-
-
 }

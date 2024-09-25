@@ -7,8 +7,10 @@ import {MatButton} from "@angular/material/button";
 import {MatCheckbox} from "@angular/material/checkbox";
 import {RouterLink} from "@angular/router";
 import {HeaderComponent} from "../../components/header/header.component";
+import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
+
 @Component({
-  selector: 'app-profile-university',
+  selector: 'app-profile-acquirer',
   standalone: true,
   imports: [
     NgIf,
@@ -23,28 +25,28 @@ import {HeaderComponent} from "../../components/header/header.component";
     MatButton,
     MatCheckbox,
     RouterLink,
-    HeaderComponent
+    HeaderComponent,
+    HeaderAcquirerComponent
   ],
-  templateUrl: './profile-university.component.html',
-  styleUrl: './profile-university.component.css'
+  templateUrl: './profile-acquirer.component.html',
+  styleUrl: './profile-acquirer.component.css'
 })
-
-export class ProfileUniversityComponent implements OnInit {
+export class ProfileAcquirerComponent implements OnInit{
   private Logo = inject(LogoApiService);
-    user: any = {};  // Cambiado a un solo objeto
+  user: any = {};  // Cambiado a un solo objeto
   options = [
-      {path: '/sellereditProfile', title: 'sellereditProfile'}
+    {path: '/editProfileAcquirer', title: 'sellereditProfile'}
 
   ]
 
   constructor(private userService: UserService) { }
-    ngOnInit(): void {
-        // Llamada al servicio para obtener un solo usuario
-        this.userService.getUserById(1).subscribe(data => {
-            this.user = data;
-            console.log('Usuario obtenido:', this.user);
-        });
-    }
+  ngOnInit(): void {
+    // Llamada al servicio para obtener un solo usuario
+    this.userService.getUserById(1).subscribe(data => {
+      this.user = data;
+      console.log('Usuario obtenido:', this.user);
+    });
+  }
   getLogoUrl(url: string | undefined) {
     return this.Logo.getUrlToLogo(url);
   }

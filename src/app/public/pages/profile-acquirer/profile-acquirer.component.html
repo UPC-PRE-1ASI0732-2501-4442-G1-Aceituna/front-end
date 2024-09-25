@@ -1,4 +1,4 @@
-<app-header/>
+<app-header-acquirer/>
 <div class="min-h-screen flex flex-col justify-center items-center pt-16">
   <mat-card class="w-full max-w-3xl shadow-lg p-6">
     <mat-card-header>
@@ -28,7 +28,7 @@
     </mat-card-content>
     <mat-card-actions class="mt-6 flex justify-center">
       @for (option of options; track option.title){
-      <button [routerLink]="option.path" mat-raised-button class="bg-customGreen hover:bg-green-600 text-white w-full py-2">Edit profile</button>
+        <button [routerLink]="option.path" mat-raised-button class="bg-customGreen hover:bg-green-600 text-white w-full py-2">Edit profile</button>
       }
     </mat-card-actions>
   </mat-card>
