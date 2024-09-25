@@ -22,7 +22,7 @@ export class HeaderAcquirerComponent {
     {path: '/home', title: 'Home'},
     {path: '/interactiveMap', title: 'Map'},
     {path:'/filter', title: 'Filter'},
-    {path:'/badgesAcquirer', title: 'Badges'},
+    {path:'/vehicleDetailsAcquirer', title: 'Badges'},
     {path:'/historyAcquirer', title: 'History'},
     {path: '/contactAcquirer', title: 'Contact Forum'},
     {path: '/profileAcquirer', title: 'My Profile'},
