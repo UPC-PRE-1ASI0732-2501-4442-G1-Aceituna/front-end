@@ -1,28 +1,5 @@
 {
   "Forum": [],
-  "planes": [
-    {
-      "name": "Cachimbo",
-      "postMonth": 2,
-      "assistanceType": "Basic",
-      "cost": 1.99,
-      "featured": false
-    },
-    {
-      "name": "Universitario",
-      "postMonth": 10,
-      "assistanceType": "Prior",
-      "cost": 5.99,
-      "featured": true
-    },
-    {
-      "name": "Graduado",
-      "postMonth": 100,
-      "assistanceType": "Attendance",
-      "cost": 19.99,
-      "featured": true
-    }
-  ],
   "profile": [
     {
       "id": 1,
@@ -234,22 +211,6 @@
       "assistanceType": "Attendance",
       "cost": 19.99,
       "featured": true
-    }
-  ],
-  "profile": [
-    {
-      "id": 1,
-      "name": "juan",
-      "email": "velasquez@gmail.com",
-      "phone": "2334223423",
-      "image": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png"
-    },
-    {
-      "id": 2,
-      "name": "maria",
-      "email": "aMaria33@gmail.com",
-      "phone": "63563563543",
-      "image": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png"
     }
   ]
 }

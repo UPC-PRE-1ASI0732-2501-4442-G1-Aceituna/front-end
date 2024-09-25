@@ -10,6 +10,8 @@ export const routes: Routes = [
   {path:'myVehicles', component: VehiclesComponent},
   {path: 'postVehicle', component: VehiclePostComponent},
   { path: 'plans', component: PlanesPageComponent},
+  {path: '', redirectTo: 'plans', pathMatch: 'full'},
+  {path: 'sellerProfile', component: ProfilePageComponent},
   {path: 'dashboard', component: DashboardPageComponent,
     children:[
       {
@@ -19,5 +21,4 @@ export const routes: Routes = [
     ]
   },
   { path: 'payment', component: PaymentPageComponent }, // Ruta para "payment"
-  { path: '', component: VehiclesComponent }
 ];
