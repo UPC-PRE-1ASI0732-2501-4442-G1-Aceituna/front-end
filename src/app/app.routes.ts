@@ -18,6 +18,8 @@ import {FilterAcquirerComponent} from "./public/pages/filter-acquirer/filter-acq
 import {
   VehicleDetailsAcquirerComponent
 } from "./public/pages/vehicle-details-acquirer/vehicle-details-acquirer.component";
+import {ProfileAcquirerComponent} from "./public/pages/profile-acquirer/profile-acquirer.component";
+import {EditProfileAcquirerComponent} from "./public/pages/edit-profile-acquirer/edit-profile-acquirer.component";
 
 export const routes: Routes = [
   {path:'myVehicles', component: VehiclesComponent},
@@ -42,5 +44,7 @@ export const routes: Routes = [
   {path: 'home', component: HomeAcquirerComponent},
   {path: 'interactiveMap', component: InteractiveMapComponent},
   {path: 'filter', component: FilterAcquirerComponent},
-  {path: 'vehicleDetailsAcquirer', component: VehicleDetailsAcquirerComponent}
+  {path: 'vehicleDetailsAcquirer', component: VehicleDetailsAcquirerComponent},
+  {path: 'profileAdquiriente', component: ProfileAcquirerComponent},
+  {path: 'editProfileAcquirer', component: EditProfileAcquirerComponent}
 ];

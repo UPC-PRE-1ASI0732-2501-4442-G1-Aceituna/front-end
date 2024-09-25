@@ -25,6 +25,7 @@ export class HeaderAcquirerComponent {
     {path:'/vehicleDetailsAcquirer', title: 'Badges'},
     {path:'/historyAcquirer', title: 'History'},
     {path: '/contactAcquirer', title: 'Contact Forum'},
-    {path: '/profileAcquirer', title: 'My Profile'},
+    {path: '/profileAdquiriente', title: 'My Profile'},
+    {path: '/editProfileAcquirer', title: 'Edit Profile'},
   ]
 }
