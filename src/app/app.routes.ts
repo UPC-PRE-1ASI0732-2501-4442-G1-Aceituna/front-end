@@ -12,6 +12,8 @@ import {
   RegisterUniversityStudentComponent
 } from "./public/pages/register-university-student/register-university-student.component";
 import {VehicleDetailsComponent} from "./public/pages/vehicle-details/vehicle-details.component";
+import {HomeAcquirerComponent} from "./public/pages/home-acquirer/home-acquirer.component";
+import {InteractiveMapComponent} from "./public/pages/interactive-map/interactive-map.component";
 
 export const routes: Routes = [
   {path:'myVehicles', component: VehiclesComponent},
@@ -33,4 +35,6 @@ export const routes: Routes = [
     ]
   },
   { path: 'payment', component: PaymentPageComponent }, // Ruta para "payment"
+  {path: 'home', component: HomeAcquirerComponent},
+  {path: 'interactiveMap', component: InteractiveMapComponent},
 ];
