@@ -1,6 +1,4 @@
-
 <div class="card-container">
-
   <div class="columnaFor">
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
       <div class="group-label-placeholder" >
@@ -30,7 +28,6 @@
       <button class="buttonSubmit" type="submit"  [disabled]="profileForm.invalid" >Save Changes</button>
     </form>
   </div>
-
 
   <div class="columnaImag">
     <img *ngIf="profile" [src]="profile.image" alt="Profile Image">

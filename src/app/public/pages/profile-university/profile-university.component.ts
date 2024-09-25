@@ -6,23 +6,25 @@ import { MatCard, MatCardActions, MatCardAvatar, MatCardContent, MatCardHeader, 
 import {MatButton} from "@angular/material/button";
 import {MatCheckbox} from "@angular/material/checkbox";
 import {RouterLink} from "@angular/router";
+import {HeaderComponent} from "../../components/header/header.component";
 @Component({
   selector: 'app-profile-university',
   standalone: true,
-    imports: [
-        NgIf,
-        NgOptimizedImage,
-        MatCard,
-        MatCardHeader,
-        MatCardContent,
-        MatCardActions,
-        MatCardAvatar,
-        MatCardTitle,
-        MatCardSubtitle,
-        MatButton,
-        MatCheckbox,
-        RouterLink
-    ],
+  imports: [
+    NgIf,
+    NgOptimizedImage,
+    MatCard,
+    MatCardHeader,
+    MatCardContent,
+    MatCardActions,
+    MatCardAvatar,
+    MatCardTitle,
+    MatCardSubtitle,
+    MatButton,
+    MatCheckbox,
+    RouterLink,
+    HeaderComponent
+  ],
   templateUrl: './profile-university.component.html',
   styleUrl: './profile-university.component.css'
 })

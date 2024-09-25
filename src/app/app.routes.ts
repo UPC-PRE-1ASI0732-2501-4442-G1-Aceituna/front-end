@@ -11,10 +11,12 @@ import {LogInComponent} from "./public/pages/log-in/log-in.component";
 import {
   RegisterUniversityStudentComponent
 } from "./public/pages/register-university-student/register-university-student.component";
+import {VehicleDetailsComponent} from "./public/pages/vehicle-details/vehicle-details.component";
 
 export const routes: Routes = [
   {path:'myVehicles', component: VehiclesComponent},
   {path: 'postVehicle', component: VehiclePostComponent},
+  {path: 'vehicleDetails', component: VehicleDetailsComponent },
   { path: 'plans', component: PlanesPageComponent},
   {path: 'login', component: LogInComponent},
   {path: 'registerUniversity', component: RegisterUniversityStudentComponent},

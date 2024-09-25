@@ -7,6 +7,7 @@ import {LogoApiService} from "../../../shared/services/logo-api.service";
 import {FormsModule} from "@angular/forms";
 import {MatMenuItem} from "@angular/material/menu";
 import {Router, RouterLink} from "@angular/router";
+import {HeaderComponent} from "../../components/header/header.component";
 
 @Component({
   selector: 'app-vehicle-post',
@@ -17,7 +18,8 @@ import {Router, RouterLink} from "@angular/router";
     FormsModule,
     NgIf,
     MatMenuItem,
-    RouterLink
+    RouterLink,
+    HeaderComponent
   ],
   templateUrl: './vehicle-post.component.html',
   styleUrl: './vehicle-post.component.css'

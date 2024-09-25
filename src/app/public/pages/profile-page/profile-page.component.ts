@@ -5,13 +5,15 @@ import {ProfileComponent} from "../../../ProfileAcquirers/components/profile/pro
 import {ConfirmationComponent} from "../../../ProfileAcquirers/components/confirmation/confirmation.component";
 import {UserService} from "../../../auth/services/user.service";
 import {User} from "../../../auth/model/user.entity";
+import {HeaderComponent} from "../../components/header/header.component";
 
 @Component({
   selector: 'app-profile-page',
   standalone: true,
   imports: [
     ProfileComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    HeaderComponent
   ],
   templateUrl: './profile-page.component.html',
   styleUrl: './profile-page.component.css'
