@@ -5,22 +5,24 @@ import {LogoApiService} from "../../../shared/services/logo-api.service";
 import { MatCard, MatCardActions, MatCardAvatar, MatCardContent, MatCardHeader, MatCardTitle, MatCardSubtitle } from "@angular/material/card";
 import {MatButton} from "@angular/material/button";
 import {MatCheckbox} from "@angular/material/checkbox";
+import {RouterLink} from "@angular/router";
 @Component({
   selector: 'app-profile-university',
   standalone: true,
-  imports: [
-    NgIf,
-    NgOptimizedImage,
-    MatCard,
-    MatCardHeader,
-    MatCardContent,
-    MatCardActions,
-    MatCardAvatar,
-    MatCardTitle,
-    MatCardSubtitle,
-    MatButton,
-    MatCheckbox
-  ],
+    imports: [
+        NgIf,
+        NgOptimizedImage,
+        MatCard,
+        MatCardHeader,
+        MatCardContent,
+        MatCardActions,
+        MatCardAvatar,
+        MatCardTitle,
+        MatCardSubtitle,
+        MatButton,
+        MatCheckbox,
+        RouterLink
+    ],
   templateUrl: './profile-university.component.html',
   styleUrl: './profile-university.component.css'
 })
@@ -28,6 +30,10 @@ import {MatCheckbox} from "@angular/material/checkbox";
 export class ProfileUniversityComponent implements OnInit {
   private Logo = inject(LogoApiService);
   users: any[] = [];
+  options = [
+      {path: '/sellereditProfile', title: 'sellereditProfile'}
+
+  ]
 
   constructor(private userService: UserService) { }
 

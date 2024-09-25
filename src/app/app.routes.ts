@@ -13,6 +13,7 @@ export const routes: Routes = [
   { path: 'plans', component: PlanesPageComponent},
   {path: '', redirectTo: 'plans', pathMatch: 'full'},
   {path: 'sellerProfile', component: ProfileUniversityComponent},
+  {path: 'sellereditProfile', component: ProfilePageComponent},
   {path: 'dashboard', component: DashboardPageComponent,
     children:[
       {
