@@ -6,7 +6,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class PlanesApiService {
   private specificCategory: string  = 'planes';
-  private baseUrl: string = 'http://localhost:3000';
+  private baseUrl: string = 'https://my-json-server.typicode.com/Open-Source-SW56-Group-2-EcoMovil/Json-Server-EcoMovil';
   private http: HttpClient = inject(HttpClient);
 
   /**
