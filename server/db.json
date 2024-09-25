@@ -21,13 +21,14 @@
       "id": 1,
       "firstName": "Juan",
       "lastName": "Calisaya",
-      "phone": "123456781",
-      "email": "example@gmail.com",
+      "phone": "@",
+      "email": "dadad@asd",
       "password": "admin",
       "ruc": "12345678901",
       "role": "student",
       "url": "https://bmx.com",
-      "apiId": "u1"
+      "apiId": "u1",
+      "name": "dda"
     },
     {
       "id": 2,

@@ -29,19 +29,20 @@ import {RouterLink} from "@angular/router";
 
 export class ProfileUniversityComponent implements OnInit {
   private Logo = inject(LogoApiService);
-  users: any[] = [];
+    user: any = {};  // Cambiado a un solo objeto
   options = [
       {path: '/sellereditProfile', title: 'sellereditProfile'}
 
   ]
 
   constructor(private userService: UserService) { }
-
-  ngOnInit(): void {
-    this.userService.getUser().subscribe(data => {
-      this.users = data; // Asumiendo que el JSON tiene una propiedad `users`
-    });
-  }
+    ngOnInit(): void {
+        // Llamada al servicio para obtener un solo usuario
+        this.userService.getUserById(1).subscribe(data => {
+            this.user = data;
+            console.log('Usuario obtenido:', this.user);
+        });
+    }
   getLogoUrl(url: string | undefined) {
     return this.Logo.getUrlToLogo(url);
   }

@@ -6,7 +6,7 @@ import {JsonPipe, NgIf} from "@angular/common";
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [ReactiveFormsModule, JsonPipe, NgIf],  // Importa los formularios reactivos directamente en el componente
+  imports: [ReactiveFormsModule, JsonPipe, NgIf],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
