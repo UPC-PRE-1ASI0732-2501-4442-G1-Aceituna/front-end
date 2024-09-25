@@ -35,7 +35,10 @@
           @for  (option of options; track option.title){
           <button mat-menu-item [routerLink]="option.path">{{option.title}}</button>
           }
-          <button mat-menu-item>Sign Up</button>
+
+          <button mat-menu-item routerLink="/myVehicles" >Sign Up</button>
+
+
           <button mat-menu-item>Settings</button>
         </mat-menu>
       </div>

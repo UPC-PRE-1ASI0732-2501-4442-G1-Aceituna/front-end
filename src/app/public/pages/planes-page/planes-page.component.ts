@@ -5,6 +5,7 @@ import {PlanListComponent} from "../../../SelectionPlanes/components/plan-list/p
 import {MatCard, MatCardContent, MatCardHeader} from "@angular/material/card";
 import {PaymentComponent} from "../../../SelectionPlanes/components/payment/payment.component";
 import {NgIf} from "@angular/common";
+import {HeaderComponent} from "../../components/header/header.component";
 
 @Component({
   selector: 'app-planes-page',
@@ -15,7 +16,8 @@ import {NgIf} from "@angular/common";
     MatCardContent,
     MatCardHeader,
     NgIf,
-    PaymentComponent
+    PaymentComponent,
+    HeaderComponent
   ],
   templateUrl: './planes-page.component.html',
   styleUrl: './planes-page.component.css'
