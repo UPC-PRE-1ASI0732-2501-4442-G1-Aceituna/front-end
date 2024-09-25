@@ -5,13 +5,14 @@ import {ProfilePageComponent} from "./public/pages/profile-page/profile-page.com
 import {DashboardPageComponent} from "./public/pages/dashboard-page/dashboard-page.component";
 import {PlanesPageComponent} from "./public/pages/planes-page/planes-page.component";
 import {PaymentPageComponent} from "./public/pages/payment-page/payment-page.component";
+import {ProfileUniversityComponent} from "./public/pages/profile-university/profile-university.component";
 
 export const routes: Routes = [
   {path:'myVehicles', component: VehiclesComponent},
   {path: 'postVehicle', component: VehiclePostComponent},
   { path: 'plans', component: PlanesPageComponent},
   {path: '', redirectTo: 'plans', pathMatch: 'full'},
-  {path: 'sellerProfile', component: ProfilePageComponent},
+  {path: 'sellerProfile', component: ProfileUniversityComponent},
   {path: 'dashboard', component: DashboardPageComponent,
     children:[
       {
