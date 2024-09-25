@@ -18,6 +18,6 @@ export class ConfirmationComponent {
     this.visible = true;
     setTimeout(() => {
       this.visible = false;
-    }, 3000); // Se oculta después de 3 segundos
+    }, 3000);
   }
 }

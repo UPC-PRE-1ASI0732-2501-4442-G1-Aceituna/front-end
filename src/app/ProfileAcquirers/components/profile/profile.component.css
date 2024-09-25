@@ -2,18 +2,17 @@
 .card-container{
   display: flex ;
   justify-content: space-between;
-  gap: 10px;            /* Espacio entre las casillas */
-  margin: 10px;            /* Espacio entre los componentes */
-  padding: 10px;           /* Espacio interior de los componentes */
-  box-sizing: border-box;  /* Incluye el padding en el tamaño total del elemento */
+  gap: 10px;
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
   border-radius: 1%;
-  border: 1px solid #939393; /*!* Solo para visualización *!*/
 }
 
 .group-label-placeholder {
   display: flex;
-  flex-direction: column; /* Coloca el label y el input en columna */
-  margin-bottom: 15px;    /* Espaciado entre cada campo */
+  flex-direction: column;
+  margin-bottom: 15px;
 }
 
 .group-label-placeholder > input {
@@ -21,28 +20,23 @@
 }
 
 .columnaFor {
-  flex: 1;                /* Cada columna ocupa el mismo ancho base */
+  flex: 1;
 
-  margin-right: 20px; /* Separación entre el formulario y la imagen */
-  /*box-sizing: border-box; !* Incluye el padding en el tamaño total del elemento *!*/
-  /*border: 1px solid black; !* Solo para visualización *!*/
+  margin-right: 20px;
   margin-left: 10px;
 
 }
 
 .columnaImag {
-  flex: 0 0 150px; /* La imagen ocupa un ancho fijo */
-  display: flex; /* Hacemos que la columna también sea flex */
-  justify-content: center; /* Centra horizontalmente el contenido */
-  align-items: center; /* Centra verticalmente el contenido */
-  /*box-sizing: border-box; !* Incluye el padding en el tamaño total del elemento *!*/
-  /*border: 1px solid black; !* Solo para visualización *!*/
+  flex: 0 0 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .columnaImag > img {
   max-width: 70%;
-  border-radius: 50%; /* Hace que la imagen sea circular */
-  /*border: 1px solid black; !* !* Solo para visualización *!*!*/
+  border-radius: 50%;
 }
 
 .buttonSubmit{
@@ -57,15 +51,15 @@
 }
 
 input {
-    border: 1px solid gray; /* Borde negro */
-    padding: 4px;          /* Espacio interior del campo */
-    margin-bottom: 15px;     /* Separación inferior entre campos */
-    width: 100%;             /* Hacer que los campos ocupen todo el ancho del contenedor */
-    box-sizing: border-box;  /* Incluir el borde y el padding dentro del ancho total */
+    border: 1px solid gray;
+    padding: 4px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
      border-radius: 7px;
 }
 
 input:focus {
-  border-color: #4CAF50;   /* Cambiar el color del borde cuando el campo está en foco */
-  outline: none;           /* Quitar el contorno predeterminado del navegador */
+  border-color: #4CAF50;
+  outline: none;
 }

@@ -1,3 +1,22 @@
+/**
+ * User entity
+ * @class User
+ * @description
+ * This class is used to represent a user
+ * It contains the following properties:
+ * @property id: string - The ID of the source.
+ * @property firstName: string - The name of the source.
+ * @property lastName: string - The lastname of the source.
+ * @property phone: string - The number of the source.
+ * @property email: string - The mail of the source.
+ * @property password: string - The password of the source.
+ * @property ruc: string - The RUC of the source.
+ * @property role: string - The role of the source.
+ * @property url: string - The URL of the source.
+ * @property apiId: string - The apiId.
+ */
+
+
 export class User {
   id: number;
   firstName: string;

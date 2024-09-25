@@ -10,20 +10,20 @@ export class PlanesApiService {
   private http: HttpClient = inject(HttpClient);
 
   /**
-   * @method getSources
+   * @method getPlans
    * @description
-   * Fetches the university.
-   * @returns An observable of the Universities.
+   * Fetches the plans.
+   * @returns An observable of the plans.
    */
   getSources() {
     return this.http.get(`${this.baseUrl}/${this.specificCategory}`);
   }
 
   /**
-   * @method initUniversities
+   * @method initPlans
    * @description
-   * Initializes the universities.
-   * @returns An observable of the universities.
+   * Initializes the plans.
+   * @returns An observable of the plans.
    */
   initUniversities() {
     return this.getSources();
