@@ -21,7 +21,7 @@ export class HeaderAcquirerComponent {
   options = [
     {path: '/home', title: 'Home'},
     {path: '/interactiveMap', title: 'Map'},
-    {path:'/filterAcquirer', title: 'Filter'},
+    {path:'/filter', title: 'Filter'},
     {path:'/badgesAcquirer', title: 'Badges'},
     {path:'/historyAcquirer', title: 'History'},
     {path: '/contactAcquirer', title: 'Contact Forum'},
