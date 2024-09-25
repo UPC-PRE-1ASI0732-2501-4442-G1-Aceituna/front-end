@@ -20,8 +20,9 @@
           <img src="./EcomovilLogo.png" class="h-12 w-12 flex-none rounded-full bg-gray-50">
         </button>
         <mat-menu #aboveMenu="matMenu" yPosition="above">
-          <button mat-menu-item>Sign Up</button>
-          <button mat-menu-item>Settings</button>
+          @for (option of optionsLogin; track option.title){
+          <button mat-menu-item [routerLink]="option.path">{{option.title}}</button>
+          }
         </mat-menu>
       </div>
 

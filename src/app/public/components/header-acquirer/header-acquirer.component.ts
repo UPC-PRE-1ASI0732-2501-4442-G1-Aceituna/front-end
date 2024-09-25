@@ -28,5 +28,8 @@ export class HeaderAcquirerComponent {
     {path: '/profileAdquiriente', title: 'My Profile'},
     {path: '/editProfileAcquirer', title: 'Edit Profile'},
   ]
+  optionsLogin = [
+    {path:'/login', title: 'Log Out'}
+  ]
 
 }

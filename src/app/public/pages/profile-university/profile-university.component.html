@@ -1,35 +1,34 @@
 <app-header/>
-<div class="min-h-screen flex flex-col justify-center items-center pt-16">
-  <mat-card class="w-full max-w-3xl shadow-lg p-6">
-    <mat-card-header>
-      <mat-card-title class="text-3xl text-customGreen">My Profile</mat-card-title>
-      <mat-card-subtitle class="text-gray-600">Personal information, vehicle details, and RUC.</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content class="flex flex-col-reverse lg:flex-row-reverse lg:items-center lg:space-x-10">
-      <div class="lg:w-2/3">
-        <h2 class="text-lg font-semibold">Name:</h2>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-        <p>{{user?.name}}</p>
-        <!--<p>{{ user?.firstName + " " + user.lastName }}</p>-->
+<div class="container min-vh-100 d-flex flex-column justify-content-center align-items-center pt-4">
+    <div class="card shadow-lg w-100" style="max-width: 36rem; padding: 1.5rem;">
+        <div class="card-header">
+            <h3 class="card-title text-success">My Profile</h3>
+            <h6 class="card-subtitle text-muted">Personal information, vehicle details, and RUC.</h6>
+        </div>
+        <div class="d-flex flex-lg-row-reverse flex-column align-items-center justify-content-between gap-3">
+            <div class="text-center">
+                <img src="https://i.imgur.com/wBWzOZo.png" alt="Profile Picture" class="rounded-circle" style="width: 12rem; height: 12rem;">
+            </div>
+            <div>
+                <h5 class="fw-bold">Name:</h5>
+                <p>{{user?.name}}</p>
 
-        <h2 class="text-lg font-semibold mt-4">Email:</h2>
-        <p>{{ user?.email }}</p>
+                <h5 class="fw-bold mt-3">Email:</h5>
+                <p>{{user?.email}}</p>
 
-        <h2 class="text-lg font-semibold mt-4">Phone:</h2>
-        <p>{{ user?.phone }}</p>
+                <h5 class="fw-bold mt-3">Phone:</h5>
+                <p>{{user?.phone}}</p>
 
-        <h2 class="text-lg font-semibold mt-4">RUC:</h2>
-        <p>{{ user?.ruc }}</p>
-
-      </div>
-      <div class="flex justify-center lg:w-1/3">
-        <img mat-card-avatar [src]="getLogoUrl(user?.url)" alt="Profile Picture" class="rounded-full w-48 h-48">
-      </div>
-    </mat-card-content>
-    <mat-card-actions class="mt-6 flex justify-center">
-      @for (option of options; track option.title){
-      <button [routerLink]="option.path" mat-raised-button class="bg-customGreen hover:bg-green-600 text-white w-full py-2">Edit profile</button>
-      }
-    </mat-card-actions>
-  </mat-card>
+                <h5 class="fw-bold mt-3">RUC:</h5>
+                <p>{{user?.ruc}}</p>
+            </div>
+        </div>
+        <div class="card-footer d-flex justify-content-center mt-4">
+            @for (option of options; track option.title){
+                <button [routerLink]="option.path" class="btn btn-success w-100">Edit Profile</button>
+            }
+        </div>
+    </div>
 </div>
