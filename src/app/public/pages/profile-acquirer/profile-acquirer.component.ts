@@ -6,7 +6,7 @@ import { MatCard, MatCardActions, MatCardAvatar, MatCardContent, MatCardHeader, 
 import {MatButton} from "@angular/material/button";
 import {MatCheckbox} from "@angular/material/checkbox";
 import {RouterLink} from "@angular/router";
-import {HeaderComponent} from "../../components/header/header.component";
+
 import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
 
 @Component({
@@ -25,7 +25,6 @@ import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-a
     MatButton,
     MatCheckbox,
     RouterLink,
-    HeaderComponent,
     HeaderAcquirerComponent
   ],
   templateUrl: './profile-acquirer.component.html',
