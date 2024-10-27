@@ -21,9 +21,9 @@ export class HeaderComponent {
   options = [
     {path: '/myVehicles', title: 'My Vehicles'},
     {path: '/postVehicle', title: 'Post Vehicle'},
-    {path:'/vehicleHistory', title: 'Vehicle History'},
-    {path:'/contactForum', title: 'Contact Forum'},
-    {path:'/sellerProfile', title: 'Seller Profile'}
+    {path:'/sellerProfile', title: 'My Profile'},
   ]
-
+  optionsLogin = [
+    {path:'/login', title: 'Log Out'}
+    ]
 }

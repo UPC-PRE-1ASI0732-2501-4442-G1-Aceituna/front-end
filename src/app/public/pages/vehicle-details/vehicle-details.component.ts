@@ -6,6 +6,7 @@ import { VehicleService } from '../../../movilizing/services/vehicle.service';
 import {LogoApiService} from "../../../shared/services/logo-api.service";
 import {MatCardImage} from "@angular/material/card";
 import {RatingModule} from "primeng/rating";
+import {HeaderComponent} from "../../components/header/header.component";
 
 @Component({
   selector: 'app-vehicle-details',
@@ -16,7 +17,8 @@ import {RatingModule} from "primeng/rating";
     ReactiveFormsModule,
     MatCardImage,
     RatingModule,
-    UpperCasePipe
+    UpperCasePipe,
+    HeaderComponent
   ],
   templateUrl: './vehicle-details.component.html',
   styleUrl: './vehicle-details.component.css'

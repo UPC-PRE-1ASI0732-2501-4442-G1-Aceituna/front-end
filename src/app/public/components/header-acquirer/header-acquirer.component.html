@@ -9,24 +9,20 @@
 
 
       <nav class="hidden md:flex space-x-6">
-        <a routerLink="/how-it-works" routerLinkActive="active" fragment="how-it-works" class="text-sm font-medium hover:text-green-600 transition-colors">Home</a>
-        <a routerLink="/who" routerLinkActive="active" fragment="who" class="text-sm font-medium hover:text-green-600 transition-colors">Map</a>
-        <a routerLink="/plans" routerLinkActive="active" fragment="plans" class="text-sm font-medium hover:text-green-600 transition-colors">Filter</a>
-        <a routerLink="/about" routerLinkActive="active" fragment="about" class="text-sm font-medium hover:text-green-600 transition-colors">Badges</a>
-        <a routerLink="/join" routerLinkActive="active" fragment="join" class="text-sm font-medium hover:text-green-600 transition-colors">History</a>
-        <a routerLink="/join" routerLinkActive="active" fragment="join" class="text-sm font-medium hover:text-green-600 transition-colors">Contact Forum</a>
+        @for  (option of options; track option.title){
+          <button [routerLink]="option.path" class="text-sm font-medium hover:text-green-600 transition-colors">{{option.title}}</button>
+        }
 
       </nav>
 
       <div class="hidden md:flex items-center">
-        <a routerLink="/join" routerLinkActive="active" fragment="join" class="text-sm font-medium hover:text-green-600 transition-colors">My Profile</a>
-
         <button mat-button [matMenuTriggerFor]="aboveMenu">
           <img src="./EcomovilLogo.png" class="h-12 w-12 flex-none rounded-full bg-gray-50">
         </button>
         <mat-menu #aboveMenu="matMenu" yPosition="above">
-          <button mat-menu-item>Sign Up</button>
-          <button mat-menu-item>Settings</button>
+          @for (option of optionsLogin; track option.title){
+            <button mat-menu-item [routerLink]="option.path">{{option.title}}</button>
+          }
         </mat-menu>
       </div>
 
@@ -37,13 +33,9 @@
           </svg>
         </button>
         <mat-menu #hamburgerMenu="matMenu" yPosition="above">
-          <button mat-menu-item routerLink="/how-it-works">Home</button>
-          <button mat-menu-item routerLink="/who">Map</button>
-          <button mat-menu-item routerLink="/plans">Filter</button>
-          <button mat-menu-item routerLink="/about">Badges</button>
-          <button mat-menu-item routerLink="/join">History</button>
-          <button mat-menu-item routerLink="/join">Contact Forum</button>
-
+          @for  (option of options; track option.title){
+            <button mat-menu-item [routerLink]="option.path">{{option.title}}</button>
+          }
           <button mat-menu-item>Sign Up</button>
           <button mat-menu-item>Settings</button>
         </mat-menu>

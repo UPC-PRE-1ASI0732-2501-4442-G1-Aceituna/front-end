@@ -125,4 +125,11 @@ export class BaseService<T> {
     return this.http.get<T>(`${this.resourcePath()}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+
+  public updateByid(id: any, item: any): Observable<T> {
+    return this.http.put<T>(`${this.resourcePath()}/${id}`
+      ,
+      JSON.stringify(item), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
 }

@@ -1,3 +1,22 @@
+/**
+ * Vehicle entity
+ * @class Vehicle
+ * @description
+ * This class is used to represent a vehicle.
+ * It contains the following properties:
+ * @property id: string - The ID of the vehicle.
+ * @property name: string - The name of the vehicle.
+ * @property type: string - The type of the vehicle.
+ * @property year: string - The year of the vehicle.
+ * @property salePrice: number - The sale price of the vehicle.
+ * @property rentailPrice: number - The rental price of the vehicle.
+ * @property description: string - The description of the vehicle.
+ * @property url: string - The URL of the vehicle.
+ * @property lat: number - The latitude of the vehicle.
+ * @property lng: number - The longitude of the vehicle.
+ */
+
+
 export class Vehicle {
   id: number;
   name: string;
@@ -34,15 +53,6 @@ export class Vehicle {
     this.lng = vehicle.lng || 0;
   }
 
-  /**
-   * "name": "BMX Pro",
-   *       "type": "Bicicleta",
-   *       "Year": "2021",
-   *       "salePrice": 200,
-   *       "rentailPrice": 20,
-   *       "description": "Bicicleta BMX diseñada para hacer trucos y saltos extremos.",
-   *       "url": "https://bmx.com"
-   */
 
 
 }

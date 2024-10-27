@@ -1,5 +1,5 @@
 <section id="vehiclesSection">
-
+    <app-header/>
     <div class="container mx-auto px-4 sm:px-6 lg:px-28 py-6 flex-wrap items-center justify-between">
     <div class="container mr-auto px-4.5 py-4.5 flex-wrap items-center justify-between">
       <h1 class="text-4xl mr-auto font-bold text-customGreen">My Vehicles</h1>
@@ -7,9 +7,6 @@
     <div class="container mr-auto px-4.5 py-6 flex items-center justify-between">
       <p>Explore our selection of minor vehicles available for rent or purchase.</p>
     </div>
-
-
-
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <div *ngFor="let vehicle of vehicleData" class="bg-white shadow-md rounded-lg p-4">
         <div class="flex flex-col items-center">

@@ -4,11 +4,12 @@ import {Router} from "@angular/router";
 import {NgForOf} from "@angular/common";
 import {VehicleService} from "../../../movilizing/services/vehicle.service";
 import {Vehicle} from "../../../movilizing/model/vehicle.entity";
+import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
 
 @Component({
   selector: 'app-interactive-map',
   standalone: true,
-  imports: [GoogleMap, MapMarker, NgForOf],
+  imports: [GoogleMap, MapMarker, NgForOf, HeaderAcquirerComponent],
   templateUrl: './interactive-map.component.html',
   styleUrl: './interactive-map.component.css'
 })

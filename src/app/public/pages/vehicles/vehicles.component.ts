@@ -5,6 +5,7 @@ import {NgForOf} from "@angular/common";
 import {LogoApiService} from "../../../shared/services/logo-api.service";
 import {MatCardImage} from "@angular/material/card";
 import {RouterLink} from "@angular/router";
+import {HeaderComponent} from "../../components/header/header.component";
 
 @Component({
   selector: 'app-vehicles',
@@ -12,7 +13,8 @@ import {RouterLink} from "@angular/router";
   imports: [
     NgForOf,
     MatCardImage,
-    RouterLink
+    RouterLink,
+    HeaderComponent
   ],
   templateUrl: './vehicles.component.html',
   styleUrl: './vehicles.component.css'
