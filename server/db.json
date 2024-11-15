@@ -1,0 +1,217 @@
+{
+  "Forum": [],
+  "profile": [
+    {
+      "id": 1,
+      "name": "David Gallo",
+      "email": "sdadad@dsada.com",
+      "phone": "93919939",
+      "image": ""
+    },
+    {
+      "id": 2,
+      "name": "maria",
+      "email": "aMaria33@gmail.com",
+      "phone": "63563563543",
+      "image": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Juan",
+      "lastName": "Calisaya",
+      "phone": "531531",
+      "email": "u202121935@upc.edu.pe",
+      "password": "admin",
+      "ruc": "12345678901",
+      "role": "student",
+      "url": "https://bmx.com",
+      "apiId": "u1",
+      "name": "beth"
+    },
+    {
+      "id": 2,
+      "firstName": "David",
+      "lastName": "Gallo",
+      "phone": "123456789",
+      "email": "juancalijesus@gmail.com",
+      "password": "user",
+      "ruc": "12345678902",
+      "role": "acquirer",
+      "url": "https://bmx.com",
+      "apiId": "u2"
+    },
+    {
+      "id": 3,
+      "firstName": "Jorge",
+      "lastName": "Hidalgo",
+      "phone": "123456789",
+      "email": "jorgito@gmail.com",
+      "password": "pass123",
+      "ruc": "12345678903",
+      "role": "acquirer",
+      "url": "https://bmx.com",
+      "apiId": "u3"
+    },
+    {
+      "id": 4,
+      "firstName": "Beth",
+      "lastName": "Oneglio",
+      "phone": "123456799",
+      "email": "betun@gmail.com",
+      "password": "pass1234",
+      "ruc": "12345678904",
+      "role": "student",
+      "url": "https://bmx.com",
+      "apiId": "u4"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": 1,
+      "name": "BMX Pro",
+      "type": "Bicicleta",
+      "year": "2021",
+      "salePrice": 200,
+      "rentailPrice": 20,
+      "description": "Bicicleta BMX diseñada para hacer trucos y saltos extremos.",
+      "url": "https://bmx.com",
+      "lat": -12.097423677490246,
+      "lng": -77.04481244087319
+    },
+    {
+      "id": 2,
+      "name": "Scooter Speedster",
+      "type": "Scooter",
+      "year": "2021",
+      "salePrice": 150,
+      "rentailPrice": 15,
+      "description": "Scooter eléctrico con velocidad máxima de 25 km/h y autonomía de 20 km.",
+      "url": "https://bmx.com",
+      "lat": -12.097423677494376,
+      "lng": -77.04481244087319
+    },
+    {
+      "id": 3,
+      "name": "Mountain Bike Explorer",
+      "type": "Bicicleta",
+      "year": "2021",
+      "salePrice": 300,
+      "rentailPrice": 30,
+      "description": "Bicicleta de montaña con suspensión doble para los terrenos más difíciles.",
+      "url": "https://bmx.com",
+      "lat": -12.097423677499346,
+      "lng": -77.04481244087219
+    },
+    {
+      "id": 4,
+      "name": "hola",
+      "type": "Bicicleta",
+      "year": "2021",
+      "salePrice": 0,
+      "rentailPrice": 0,
+      "description": "as",
+      "url": "https://bmx.com",
+      "lat": -12.110757131111548,
+      "lng": -77.04481244087219
+    },
+    {
+      "id": 5,
+      "name": "",
+      "type": "Bike",
+      "year": 2023,
+      "salePrice": 150,
+      "rentailPrice": 200,
+      "description": "Achu",
+      "url": "https://bmx.com",
+      "lat": -12.097423977490346,
+      "lng": -77.04481244087219
+    },
+    {
+      "id": 6,
+      "name": "Bike",
+      "type": "Bike",
+      "year": 2022,
+      "salePrice": 1500,
+      "rentailPrice": 140,
+      "description": "Super new bike",
+      "url": "https://bmx.com",
+      "lat": -12.097423677410346,
+      "lng": -77.04481244087219
+    },
+    {
+      "id": 7,
+      "name": "aaa",
+      "type": "Bike",
+      "year": 123,
+      "salePrice": 123,
+      "rentailPrice": 12312,
+      "description": "sdadasd",
+      "url": "https://bmx.com",
+      "lat": -12.097423607490345,
+      "lng": -77.04481244087219
+    },
+    {
+      "id": 8,
+      "name": "La superBicicleta",
+      "type": "rollskater",
+      "year": 2021,
+      "salePrice": 2000,
+      "rentailPrice": 3000,
+      "description": "Es la meejor BICI",
+      "url": "https://bmx.com",
+      "lat": -12.097343278386779,
+      "lng": -77.07080274350476
+    },
+    {
+      "id": 9,
+      "name": "BMX",
+      "type": "Bike",
+      "year": 2003,
+      "salePrice": 9999,
+      "rentailPrice": 1,
+      "description": "12 X DIA",
+      "url": "https://bmx.com",
+      "lat": -12.1470976,
+      "lng": -76.9458176,
+      "apiId": "v1"
+    },
+    {
+      "id": 10,
+      "name": "BMX",
+      "type": "Bike",
+      "year": 2003,
+      "salePrice": 9999,
+      "rentailPrice": 1,
+      "description": "12 X DIA",
+      "url": "https://bmx.com",
+      "lat": -12.1470976,
+      "lng": -76.9458176,
+      "apiId": "v1"
+    }
+  ],
+  "planes": [
+    {
+      "name": "Cachimbo",
+      "postMonth": 2,
+      "assistanceType": "Basic",
+      "cost": 1.99,
+      "featured": false
+    },
+    {
+      "name": "Universitario",
+      "postMonth": 10,
+      "assistanceType": "Prior",
+      "cost": 5.99,
+      "featured": true
+    },
+    {
+      "name": "Graduado",
+      "postMonth": 100,
+      "assistanceType": "Attendance",
+      "cost": 19.99,
+      "featured": true
+    }
+  ]
+}
