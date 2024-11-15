@@ -19,7 +19,6 @@ export const appConfig: ApplicationConfig = {
           provide: TranslateLoader,
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
-          //add the following line to the end of the file
         }
         ,
         defaultLanguage: 'en',
