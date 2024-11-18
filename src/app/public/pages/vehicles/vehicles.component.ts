@@ -38,10 +38,8 @@ export class VehiclesComponent implements OnInit {
 
   private getAllVehicles() {
     this.vehicleService.getAll().subscribe((response: Vehicle[]) => {
-      console.log(response);
+        console.log(response);
       this.vehicleData = response;
     });
   }
-
-
 }

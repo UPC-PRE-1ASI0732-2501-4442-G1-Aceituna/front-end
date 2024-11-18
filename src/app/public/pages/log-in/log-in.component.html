@@ -10,12 +10,12 @@
         Log in
       </button>
       <button
-        class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
+        class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2"
         routerLink="/registerAcquirer">
         {{ 'register_acquirer' | translate }}
       </button>
       <button
-        class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2"
+        class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
         routerLink="/registerUniversity">
         {{ 'register_organization' | translate }}
       </button>
@@ -24,16 +24,20 @@
     <div class="mb-4">
       <input
         class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-        type="email"
+        type="text"
+        name="email"
         placeholder="Email"
+        [(ngModel)]="form.username"
       />
     </div>
 
     <div class="mb-4">
       <input
         class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-        type="password"
+        type="text"
+        name="password"
         placeholder="Password"
+        [(ngModel)]="form.password"
       />
     </div>
 
@@ -49,9 +53,12 @@
       <a href="#" class="text-green-500 hover:text-green-600">{{ 'forgot_password' | translate }}</a>
     </div>
 
-    <button class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" routerLink="/plans">
+
+    <button class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" (click)="onSubmit()" routerLink="/plans">
       {{ 'log_in' | translate }}
+
     </button>
+
 
   </div>
 </div>

@@ -19,40 +19,49 @@
 
 export class Vehicle {
   id: number;
-  name: string;
   type: string;
+  name: string;
   year: string;
-  salePrice: number;
+  review: number;
   rentailPrice: number;
-  description: string;
+  salePrice: number;
+  isAvailable: boolean;
   url: string;
-    lat: number;
-    lng: number;
+  description: string;
+  lat: number;
+  lng: number;
+  student_id: number;
 
   constructor(vehicle:{
     id?: number,
-    name?: string,
     type?: string,
+    name?: string,
     year?: string,
-    salePrice?: number,
+    review?: number;
     rentailPrice?: number,
-    description?: string,
+    salePrice?: number,
+    isAvailable?: boolean,
     url?: string,
+    description?: string,
     lat?: number,
     lng?: number
+    student_id?: number
   }){
     this.id = vehicle.id || 0;
     this.name = vehicle.name || '';
     this.type = vehicle.type || '';
     this.year = vehicle.year || '';
+    this.review = vehicle.review || 0;
     this.salePrice = vehicle.salePrice || 0;
     this.rentailPrice = vehicle.rentailPrice || 0;
-    this.description = vehicle.description || '';
-    this.url = vehicle.url || 'https://bmx.com';
+    this.rentailPrice = vehicle.rentailPrice || 0;
+    this.isAvailable = vehicle.isAvailable || true;
+    this.description = vehicle.description || 'Esta es la descripcion del product';
+    this.url = vehicle.url || "";
     this.lat = vehicle.lat || 0;
     this.lng = vehicle.lng || 0;
+    this.student_id = vehicle.student_id || 0;
+
   }
-
-
 
 }

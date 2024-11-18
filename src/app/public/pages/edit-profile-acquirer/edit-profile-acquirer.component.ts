@@ -2,7 +2,7 @@ import { Component, inject, OnInit, ViewChild} from '@angular/core';
 import {ConfirmationComponent} from "../../../ProfileAcquirers/components/confirmation/confirmation.component";
 import {ProfileComponent} from "../../../ProfileAcquirers/components/profile/profile.component";
 import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
-import {UserService} from "../../../auth/services/user.service";
+import {UserService} from "../../../../../../../../learning-center-master/learning-center-master/src/app/iam/model/user.service";
 import {TranslateModule} from "@ngx-translate/core";
 
 @Component({

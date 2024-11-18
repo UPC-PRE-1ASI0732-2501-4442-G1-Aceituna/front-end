@@ -73,7 +73,7 @@ export class VehiclePostComponent implements OnInit {
     });
   }
 
-  public onSubmit(): void {
+  public onClick(): void {
     if (this.newVehicle.description && this.newVehicle.type && this.newVehicle.year && this.newVehicle.salePrice && this.newVehicle.rentailPrice && this.newVehicle.name) {
       this.getCurrentLocation().then((coords) => {
         this.newVehicle.lat = coords.lat;
@@ -84,7 +84,7 @@ export class VehiclePostComponent implements OnInit {
           next: (response: Vehicle) => {
             this.vehicleData = [...this.vehicleData, response];
             this.newVehicle = new Vehicle({});
-            this.router.navigate(['/myVehicles']);
+            this.router.navigate(['/myVehicles']).then();
           },
           error: (err) => {
             console.error('Error creando el vehículo:', err);
@@ -95,6 +95,4 @@ export class VehiclePostComponent implements OnInit {
       });
     }
   }
-
-
 }

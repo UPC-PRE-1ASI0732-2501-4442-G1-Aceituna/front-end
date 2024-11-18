@@ -8,7 +8,7 @@
       <p>{{ 'provide_information' | translate }}</p>
     </div>
 
-    <form (ngSubmit)="onSubmit()" #vehicleForm="ngForm">
+    <form  #vehicleForm="ngForm">
       <div class=" gap-6 border-2 mr-auto px-10 py-9">
 
         <!-- Campo Name -->
@@ -120,7 +120,7 @@
 
         <!-- Botón Add incorporated-->
         <div class="container mr-auto px-4.5 py-6 flex items-center justify-between">
-          <button type="submit" [disabled]="vehicleForm.invalid" class="bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-full">
+          <button type="submit" [disabled]="vehicleForm.invalid" class="bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-full" (click)="onClick()">
             {{ 'save_vehicle' | translate }}
           </button>
 

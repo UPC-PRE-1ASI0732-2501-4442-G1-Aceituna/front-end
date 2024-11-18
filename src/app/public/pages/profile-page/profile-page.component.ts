@@ -3,8 +3,8 @@ import {Profile} from "../../../ProfileAcquirers/model/profile";
 import {ProfileApiService} from "../../../ProfileAcquirers/services/profile-api.service";
 import {ProfileComponent} from "../../../ProfileAcquirers/components/profile/profile.component";
 import {ConfirmationComponent} from "../../../ProfileAcquirers/components/confirmation/confirmation.component";
-import {UserService} from "../../../auth/services/user.service";
-import {User} from "../../../auth/model/user.entity";
+import {UserService} from "../../../../../../../../learning-center-master/learning-center-master/src/app/iam/model/user.service";
+import {User} from "../../../../../../../../learning-center-master/learning-center-master/src/app/iam/model/model/user.entity";
 import {HeaderComponent} from "../../components/header/header.component";
 import {TranslateModule} from "@ngx-translate/core";
 

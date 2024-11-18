@@ -1,6 +1,6 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {NgIf, NgOptimizedImage} from "@angular/common";
-import {UserService} from "../../../auth/services/user.service";
+import {UserService} from "../../../../../../../../learning-center-master/learning-center-master/src/app/iam/model/user.service";
 import {LogoApiService} from "../../../shared/services/logo-api.service";
 import { MatCard, MatCardActions, MatCardAvatar, MatCardContent, MatCardHeader, MatCardTitle, MatCardSubtitle } from "@angular/material/card";
 import {MatButton} from "@angular/material/button";

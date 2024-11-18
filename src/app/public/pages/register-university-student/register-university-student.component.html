@@ -23,26 +23,29 @@
       </div>
 
       <div class="mb-4">
-        <label class="block text-gray-700 font-bold mb-2" for="ruc">
+        <label class="block text-gray-700 font-bold mb-2">
           RUC
         </label>
         <input
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="ruc"
           type="text"
+          name="ruc"
           placeholder="Enter your RUC"
+          [(ngModel)]="form.ruc"
         />
       </div>
 
       <div class="mb-4">
-        <label class="block text-gray-700 font-bold mb-2" for="email">
+        <label class="block text-gray-700 font-bold mb-2" >
           Email
         </label>
         <input
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="email"
-          type="email"
+          type="text"
+          name="email"
           placeholder="Enter your email"
+          [(ngModel)]="form.email"
+
         />
       </div>
 
@@ -52,9 +55,10 @@
         </label>
         <input
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="name"
           type="text"
+          name="username"
           placeholder="Enter your name and last name"
+          [(ngModel)]="form.username"
         />
       </div>
 
@@ -64,9 +68,10 @@
         </label>
         <input
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-          id="password"
-          type="password"
+          type="text"
+          name="password"
           placeholder="Enter your password"
+          [(ngModel)]="form.password"
         />
       </div>
 
@@ -87,7 +92,7 @@
       <div class="flex items-center justify-center">
         <button
           class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          routerLink="/plans">
+          (click)="onSubmit()" routerLink="/plans">
           {{ 'register_organization' | translate }}
         </button>
       </div>

@@ -9,6 +9,6 @@ export class ProfileApiService extends BaseService<Profile>{
 
   constructor() {
     super();
-    this.resourceEndPoint = '/profile';
+    this.resourceEndPoint = '/profiles';
   }
 }
