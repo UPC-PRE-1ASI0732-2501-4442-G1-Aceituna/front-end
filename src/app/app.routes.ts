@@ -20,6 +20,7 @@ import {
 } from "./public/pages/vehicle-details-acquirer/vehicle-details-acquirer.component";
 import {ProfileAcquirerComponent} from "./public/pages/profile-acquirer/profile-acquirer.component";
 import {EditProfileAcquirerComponent} from "./public/pages/edit-profile-acquirer/edit-profile-acquirer.component";
+import {authenticationGuard} from "./auth/services/authentication.guard";
 
 export const routes: Routes = [
   {path:'myVehicles', component: VehiclesComponent},
@@ -35,13 +36,19 @@ export const routes: Routes = [
   {path: 'dashboard', component: DashboardPageComponent,
     children:[
       {
-        path: 'profile', // Rutas hijas
+        path: 'plans', // Rutas hijas
         component: ProfilePageComponent
+
+      },
+      {
+        path: '', // Ruta hija por defecto cuando no hay path
+        redirectTo: 'myVehicles', // Redirige a /dashboard/profile
+        pathMatch: 'full'
       }
     ]
   },
   { path: 'payment', component: PaymentPageComponent }, // Ruta para "payment"
-  {path: 'home', component: HomeAcquirerComponent},
+  {path: 'home', component: HomeAcquirerComponent}, //, canActivate: [authenticationGuard]
   {path: 'interactiveMap', component: InteractiveMapComponent},
   {path: 'filter', component: FilterAcquirerComponent},
   {path: 'vehicleDetailsAcquirer', component: VehicleDetailsAcquirerComponent},
