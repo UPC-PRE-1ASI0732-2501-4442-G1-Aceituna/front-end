@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Router, RouterLink} from "@angular/router";
 import {TranslateModule} from "@ngx-translate/core";
 import {FormsModule} from "@angular/forms";
-import {AuthenticationService} from "../../../auth/services/authentication.service";
-import {SignInRequest} from "../../../auth/model/sign-in.request";
+import {AuthenticationService} from "../../services/authentication.service";
+import {SignInRequest} from "../../model/sign-in.request";
 import {ProfileApiService} from "../../../ProfileAcquirers/services/profile-api.service";
 import {ProfileAccountService} from "../../../ProfileAcquirers/services/profile-account.service";
 

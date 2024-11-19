@@ -1,23 +1,25 @@
-import {Component, inject, OnInit, ViewChild} from '@angular/core';
-import {ProfileComponent} from "../../../ProfileAcquirers/components/profile/profile.component";
-import {ConfirmationComponent} from "../../../ProfileAcquirers/components/confirmation/confirmation.component";
-import {HeaderComponent} from "../../components/header/header.component";
+import { Component, OnInit, ViewChild} from '@angular/core';
+import {ConfirmationComponent} from "../../components/confirmation/confirmation.component";
+import {ProfileComponent} from "../../components/profile/profile.component";
+import {HeaderAcquirerComponent} from "../../../public/components/header-acquirer/header-acquirer.component";
 import {TranslateModule} from "@ngx-translate/core";
 import {UserService} from "../../../auth/services/user.service";
+import {HeaderComponent} from "../../../public/components/header/header.component";
 
 @Component({
-  selector: 'app-profile-page',
+  selector: 'app-edit-profile-acquirer',
   standalone: true,
   imports: [
-    ProfileComponent,
     ConfirmationComponent,
+    ProfileComponent,
     TranslateModule,
+    HeaderAcquirerComponent,
     HeaderComponent
   ],
-  templateUrl: './profile-page.component.html',
-  styleUrl: './profile-page.component.css'
+  templateUrl: './edit-profile-acquirer.component.html',
+  styleUrl: './edit-profile-acquirer.component.css'
 })
-export class ProfilePageComponent implements OnInit {
+export class EditProfileAcquirerComponent implements OnInit {
   user: any;
   @ViewChild('confirmation') confirmation!: ConfirmationComponent;
 

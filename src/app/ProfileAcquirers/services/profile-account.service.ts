@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import {ProfileApiService} from "./profile-api.service";
-
 @Injectable({
   providedIn: 'root'
 })

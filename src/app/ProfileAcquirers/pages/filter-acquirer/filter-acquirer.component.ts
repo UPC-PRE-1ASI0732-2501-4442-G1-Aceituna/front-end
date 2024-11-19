@@ -6,9 +6,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import {NgForOf, NgIf} from '@angular/common';
 import { MatSelectModule } from '@angular/material/select';
-import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
+import {HeaderAcquirerComponent} from "../../../public/components/header-acquirer/header-acquirer.component";
 import {TranslateModule} from "@ngx-translate/core";
-import {HeaderComponent} from "../../components/header/header.component";
+import {HeaderComponent} from "../../../public/components/header/header.component";
 @Component({
   selector: 'app-filter-acquirer',
   standalone: true,

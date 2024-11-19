@@ -1,11 +1,11 @@
 import {Component, inject} from '@angular/core';
-import {PlanesApiService} from "../../../SelectionPlanes/services/planes-api.service";
-import {Plan} from "../../../SelectionPlanes/model/plan";
-import {PlanListComponent} from "../../../SelectionPlanes/components/plan-list/plan-list.component";
+import {PlanesApiService} from "../../services/planes-api.service";
+import {Plan} from "../../model/plan";
+import {PlanListComponent} from "../../components/plan-list/plan-list.component";
 import {MatCard, MatCardContent, MatCardHeader} from "@angular/material/card";
-import {PaymentComponent} from "../../../SelectionPlanes/components/payment/payment.component";
+import {PaymentComponent} from "../../components/payment/payment.component";
 import {NgIf} from "@angular/common";
-import {HeaderComponent} from "../../components/header/header.component";
+import {HeaderComponent} from "../../../public/components/header/header.component";
 import {TranslateModule} from "@ngx-translate/core";
 
 @Component({

@@ -6,16 +6,16 @@ import {NgIf} from "@angular/common";
 import {TranslateService} from "@ngx-translate/core";
 import {HeaderComponent} from "./public/components/header/header.component";
 import {HeaderAcquirerComponent} from "./public/components/header-acquirer/header-acquirer.component";
-import {VehiclesComponent} from "./public/pages/vehicles/vehicles.component";
-import {VehiclePostComponent} from "./public/pages/vehicle-post/vehicle-post.component";
+import {VehiclesComponent} from "./movilizing/pages/vehicles/vehicles.component";
+import {VehiclePostComponent} from "./movilizing/pages/vehicle-post/vehicle-post.component";
 import {InteractiveMapComponent} from "./public/pages/interactive-map/interactive-map.component";
-import {VehicleDetailsComponent} from "./public/pages/vehicle-details/vehicle-details.component";
-import {PlanesPageComponent} from "./public/pages/planes-page/planes-page.component";
-import {LogInComponent} from "./public/pages/log-in/log-in.component";
+import {VehicleDetailsComponent} from "./movilizing/pages/vehicle-details/vehicle-details.component";
+import {PlanesPageComponent} from "./SelectionPlanes/pages/planes-page/planes-page.component";
+import {LogInComponent} from "./auth/pages/log-in/log-in.component";
 import {
   RegisterUniversityStudentComponent
 } from "./public/pages/register-university-student/register-university-student.component";
-import {RegisterAcquirerComponent} from "./public/pages/register-acquirer/register-acquirer.component";
+import {RegisterAcquirerComponent} from "./ProfileAcquirers/pages/register-acquirer/register-acquirer.component";
 
 @Component({
   selector: 'app-root',

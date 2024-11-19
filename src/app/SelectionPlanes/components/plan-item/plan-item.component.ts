@@ -6,8 +6,7 @@ import {
   MatCardContent,
   MatCardFooter,
   MatCardHeader,
-  MatCardImage,
-  MatCardModule
+  MatCardImage
 } from "@angular/material/card";
 import {MatIcon} from "@angular/material/icon";
 import {MatFabAnchor} from "@angular/material/button";

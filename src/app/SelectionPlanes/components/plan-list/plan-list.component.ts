@@ -1,5 +1,5 @@
-import {Component, EventEmitter, inject, Input, Output} from '@angular/core';
-import {PlanesApiService} from "../../services/planes-api.service";
+import {Component, Input} from '@angular/core';
+
 import {Plan} from "../../model/plan";
 import {PlanItemComponent} from "../plan-item/plan-item.component";
 

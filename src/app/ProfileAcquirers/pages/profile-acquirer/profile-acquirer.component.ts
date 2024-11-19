@@ -7,7 +7,7 @@ import {MatButton} from "@angular/material/button";
 import {MatCheckbox} from "@angular/material/checkbox";
 import {RouterLink} from "@angular/router";
 import {TranslateModule} from "@ngx-translate/core";
-import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
+import {HeaderAcquirerComponent} from "../../../public/components/header-acquirer/header-acquirer.component";
 import {UserService} from "../../../auth/services/user.service";
 import {AuthenticationService} from "../../../auth/services/authentication.service";
 

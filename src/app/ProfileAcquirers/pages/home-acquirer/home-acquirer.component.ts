@@ -1,12 +1,12 @@
-import {Component, inject, Input, OnInit} from '@angular/core';
-import {HeaderComponent} from "../../components/header/header.component";
+import {Component, inject} from '@angular/core';
+import {HeaderComponent} from "../../../public/components/header/header.component";
 import {MatCardImage} from "@angular/material/card";
 import {NgForOf} from "@angular/common";
 import {LogoApiService} from "../../../shared/services/logo-api.service";
 import {RouterLink} from "@angular/router";
 import {VehicleService} from "../../../movilizing/services/vehicle.service";
 import {Vehicle} from "../../../movilizing/model/vehicle.entity";
-import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
+import {HeaderAcquirerComponent} from "../../../public/components/header-acquirer/header-acquirer.component";
 import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
