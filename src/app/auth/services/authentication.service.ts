@@ -1,12 +1,13 @@
 import {Injectable} from '@angular/core';
 import {environment} from "../../../environments/environment";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {Router} from "@angular/router";
 import {SignUpRequest} from "../model/sign-up.request";
 import {SignUpResponse} from "../model/sign-up.response";
 import {SignInRequest} from "../model/sign-in.request";
 import {SignInResponse} from "../model/sign-in.response";
+import {ProfileApiService} from "../../ProfileAcquirers/services/profile-api.service";
 
 /**
  * Service for handling authentication operations.
@@ -15,6 +16,8 @@ import {SignInResponse} from "../model/sign-in.response";
  */
 @Injectable({providedIn: 'root'})
 export class AuthenticationService {
+  public id: number = 0;
+  public i: number = 0;
   basePath: string = `${environment.serverBasePath}`;
   httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
 
@@ -27,7 +30,11 @@ export class AuthenticationService {
     * @param router The router service.
    * @param http The HttpClient service.
    */
-  constructor(private router: Router, private http: HttpClient) {
+  constructor(private router: Router, private http: HttpClient, private profileApiService: ProfileApiService ) {
+  }
+
+  getProfiles(): Observable<string> {
+    return this.http.get<string>(`${environment.serverBasePath}/profiles`);
   }
 
   get isSignedIn() {
@@ -52,12 +59,10 @@ export class AuthenticationService {
    * @returns The {@link SignUpResponse} object containing the user's id and username.
    */
   signUp(signUpRequest: SignUpRequest) {
-    console.log('entra al sign up');
     return this.http.post<SignUpResponse>(`${this.basePath}/authentication/sign-up`, signUpRequest, this.httpOptions)
       .subscribe({
 
         next: (response) => {
-          console.log('Entra al observer');
           console.log(`Signed up as ${response.username} with id ${response.id}`);
           this.router.navigate(['/login']).then();
 
@@ -96,7 +101,9 @@ export class AuthenticationService {
           this.signedInUsername.next(response.username);
           localStorage.setItem('token', response.token);
           console.log(`Signed in as ${response.username} with token ${response.token}`);
-          this.router.navigate(['/plans']).then();
+          this.router.navigate(['/election']).then();
+          this.id = response.id;
+          console.error(`El id cuando se le asigana es: ${this.id}`);
         },
         error: (error) => {
 
@@ -109,6 +116,9 @@ export class AuthenticationService {
           this.router.navigate(['/login']).then();
         }
       });
+
+
+    console.log(`El id antes de salir del service es ${this.id}`);
   }
 
   /**

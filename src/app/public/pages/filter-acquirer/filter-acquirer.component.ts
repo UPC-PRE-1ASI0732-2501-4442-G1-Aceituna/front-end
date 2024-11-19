@@ -4,10 +4,11 @@ import { VehicleService } from '../../../movilizing/services/vehicle.service';
 import { LogoApiService } from '../../../shared/services/logo-api.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { NgForOf } from '@angular/common';
+import {NgForOf, NgIf} from '@angular/common';
 import { MatSelectModule } from '@angular/material/select';
 import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
 import {TranslateModule} from "@ngx-translate/core";
+import {HeaderComponent} from "../../components/header/header.component";
 @Component({
   selector: 'app-filter-acquirer',
   standalone: true,
@@ -17,7 +18,9 @@ import {TranslateModule} from "@ngx-translate/core";
     MatButtonModule,
     MatSelectModule,
     TranslateModule,
-    HeaderAcquirerComponent
+    HeaderAcquirerComponent,
+    HeaderComponent,
+    NgIf
   ],
   templateUrl: './filter-acquirer.component.html',
   styleUrls: ['./filter-acquirer.component.css']

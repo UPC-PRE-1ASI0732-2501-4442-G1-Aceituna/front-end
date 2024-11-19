@@ -43,13 +43,14 @@ export class VehicleDetailsAcquirerComponent implements OnInit{
 
   ngOnInit(): void {
     //cambiar luego xd cuanod juan termine el filter
-    this.getVehiclebyId(1);
+    this.getVehiclebyId(5);
     this.randomRating()
   }
 
   private getVehiclebyId(id: number) {
     this.vehicleService.getbyId(id).subscribe((response: Vehicle) => {
       console.log(response);
+      console.log('aqui esta el vehiculo');
       this.vehicleData = response;
     });
   }

@@ -1,0 +1,31 @@
+<section id="vehiclesDetailSection">
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-28 py-6 flex-wrap items-center justify-between">
+
+<!--        <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"-->
+<!--                (click)="redirectToWhatsApp()">-->
+<!--          {{ 'chat_whatsapp' | translate }}-->
+<!--        </button>-->
+
+<!--        <mat-menu >-->
+<!--          @for (option of optionsLogin; track option.title){-->
+<!--            <button mat-menu-item [routerLink]="option.path">{{option.title}}</button>-->
+<!--          }-->
+<!--        </mat-menu>-->
+
+<!--        <button class="bg-customGreen hover:bg-green-700 text-white font-bold py-2 px-4 rounded text-left">-->
+<!--          {{ 'buy' | translate }}-->
+<!--        </button>-->
+
+
+    <mat-card-actions class="flex justify-center items-center mt-4">
+      <button [routerLink]="'/plans'" mat-button color="primary" class="btn bg-green-500 text-white shadow-md ">
+        Plans
+      </button>
+      <button [routerLink]="'/home'" mat-button color="primary" class="btn bg-green-500 text-white shadow-md ">
+        Home
+      </button>
+    </mat-card-actions>
+
+  </div>
+</section>

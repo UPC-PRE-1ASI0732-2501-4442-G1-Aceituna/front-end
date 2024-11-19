@@ -4,6 +4,8 @@ import {TranslateModule} from "@ngx-translate/core";
 import {FormsModule} from "@angular/forms";
 import {AuthenticationService} from "../../../auth/services/authentication.service";
 import {SignInRequest} from "../../../auth/model/sign-in.request";
+import {ProfileApiService} from "../../../ProfileAcquirers/services/profile-api.service";
+import {ProfileAccountService} from "../../../ProfileAcquirers/services/profile-account.service";
 
 @Component({
   selector: 'app-log-in',
@@ -21,8 +23,16 @@ export class LogInComponent implements OnInit{
     username: '',
     password: ''
   }
+
+  profile = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    phoneNumber: ''
+  }
+
   submitted = false;
-  constructor(private router: Router, private authenticationService: AuthenticationService) { }
+  constructor(private router: Router, private authenticationService: AuthenticationService, private profileService: ProfileApiService, private profileAccountService: ProfileAccountService) { }
   ngOnInit(): void {
 
   }
@@ -37,5 +47,9 @@ export class LogInComponent implements OnInit{
     this.authenticationService.signIn(signInRequest);
     this.submitted = true;
 
+    this.profileService.create(this.profileAccountService.getProfile()).subscribe((response: any) => {
+      console.log(response);
+      this.profile = response;
+    });
   }
 }

@@ -11,16 +11,16 @@ import {TranslateModule} from "@ngx-translate/core";
 @Component({
   selector: 'app-planes-page',
   standalone: true,
-  imports: [
-    PlanListComponent,
-    MatCard,
-    MatCardContent,
-    MatCardHeader,
-    NgIf,
-    PaymentComponent,
-    TranslateModule,
-    HeaderComponent
-  ],
+    imports: [
+        PlanListComponent,
+        MatCard,
+        MatCardContent,
+        MatCardHeader,
+        NgIf,
+        PaymentComponent,
+        TranslateModule,
+        HeaderComponent
+    ],
   templateUrl: './planes-page.component.html',
   styleUrl: './planes-page.component.css'
 })

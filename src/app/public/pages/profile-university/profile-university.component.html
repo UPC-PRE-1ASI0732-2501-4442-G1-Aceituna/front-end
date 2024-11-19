@@ -1,4 +1,5 @@
-<app-header/>
+<app-header-acquirer></app-header-acquirer>
+
 <div class="min-h-screen flex flex-col justify-center items-center pt-16">
   <mat-card class="w-full max-w-3xl shadow-lg p-6">
     <mat-card-header>
@@ -10,13 +11,13 @@
     <mat-card-content class="profile-content">
       <!-- Información del usuario a la izquierda -->
       <div class="user-info">
-        <h2 class="text-lg font-semibold">{{ 'name' | translate }}:</h2>
+        <h2 class="text-lg font-semibold">{{ 'name' | translate }}: {{user.username}}</h2>
 
 
-        <h2 class="text-lg font-semibold mt-4">Email:</h2>
+        <h2 class="text-lg font-semibold mt-4">Email:{{user.email}}</h2>
 
 
-        <h2 class="text-lg font-semibold mt-4">{{ 'phone' | translate }}:</h2>
+        <h2 class="text-lg font-semibold mt-4">{{ 'phone' | translate }}:{{user.phoneNumber}}</h2>
 
 
         <h2 class="text-lg font-semibold mt-4">RUC:</h2>

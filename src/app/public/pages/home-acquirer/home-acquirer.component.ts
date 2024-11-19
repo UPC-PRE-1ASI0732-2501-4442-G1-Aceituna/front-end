@@ -12,14 +12,14 @@ import {TranslateModule} from "@ngx-translate/core";
 @Component({
   selector: 'app-home-acquirer',
   standalone: true,
-  imports: [
-    HeaderComponent,
-    MatCardImage,
-    NgForOf,
-    HeaderAcquirerComponent,
-    TranslateModule,
-    RouterLink
-  ],
+    imports: [
+        HeaderComponent,
+        MatCardImage,
+        NgForOf,
+        HeaderAcquirerComponent,
+        TranslateModule,
+        RouterLink
+    ],
   templateUrl: './home-acquirer.component.html',
   styleUrl: './home-acquirer.component.css'
 })

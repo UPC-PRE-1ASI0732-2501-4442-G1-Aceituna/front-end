@@ -8,6 +8,7 @@ import {MatCardImage} from "@angular/material/card";
 import {RatingModule} from "primeng/rating";
 import {HeaderComponent} from "../../components/header/header.component";
 import {TranslateModule} from "@ngx-translate/core";
+import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
 
 @Component({
   selector: 'app-vehicle-details',
@@ -20,7 +21,8 @@ import {TranslateModule} from "@ngx-translate/core";
     RatingModule,
     UpperCasePipe,
     TranslateModule,
-    HeaderComponent
+    HeaderComponent,
+    HeaderAcquirerComponent
   ],
   templateUrl: './vehicle-details.component.html',
   styleUrl: './vehicle-details.component.css'

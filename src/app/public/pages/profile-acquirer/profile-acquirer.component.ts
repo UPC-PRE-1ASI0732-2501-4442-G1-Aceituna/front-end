@@ -1,6 +1,6 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {NgIf, NgOptimizedImage} from "@angular/common";
-import {UserService} from "../../../../../../../../learning-center-master/learning-center-master/src/app/iam/model/user.service";
+
 import {LogoApiService} from "../../../shared/services/logo-api.service";
 import { MatCard, MatCardActions, MatCardAvatar, MatCardContent, MatCardHeader, MatCardTitle, MatCardSubtitle } from "@angular/material/card";
 import {MatButton} from "@angular/material/button";
@@ -8,6 +8,8 @@ import {MatCheckbox} from "@angular/material/checkbox";
 import {RouterLink} from "@angular/router";
 import {TranslateModule} from "@ngx-translate/core";
 import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
+import {UserService} from "../../../auth/services/user.service";
+import {AuthenticationService} from "../../../auth/services/authentication.service";
 
 @Component({
   selector: 'app-profile-acquirer',
@@ -26,12 +28,13 @@ import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-a
     MatCheckbox,
     TranslateModule,
     RouterLink,
-    HeaderAcquirerComponent
+    HeaderAcquirerComponent,
   ],
   templateUrl: './profile-acquirer.component.html',
   styleUrl: './profile-acquirer.component.css'
 })
 export class ProfileAcquirerComponent implements OnInit{
+  private id!: number;
   private Logo = inject(LogoApiService);
   user: any = {};  // Cambiado a un solo objeto
   options = [
@@ -39,10 +42,11 @@ export class ProfileAcquirerComponent implements OnInit{
 
   ]
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private authService: AuthenticationService) { }
   ngOnInit(): void {
     // Llamada al servicio para obtener un solo usuario
-    this.userService.getUserById(1).subscribe(data => {
+   this.id = this.authService.id
+    this.userService.getbyId(this.id).subscribe(data => {
       this.user = data;
       console.log('Usuario obtenido:', this.user);
     });

@@ -21,7 +21,7 @@ export class Vehicle {
   id: number;
   type: string;
   name: string;
-  year: string;
+  year: number;
   review: number;
   priceRent: number;
   priceSell: number;
@@ -30,13 +30,13 @@ export class Vehicle {
   lat: number;
   lng: number;
   description: string;
-  studentId: number;
+
 
   constructor(vehicle:{
     id?: number,
     type?: string,
     name?: string,
-    year?: string,
+    year?: number,
     review?: number;
     priceRent?: number,
     priceSell?: number,
@@ -50,7 +50,7 @@ export class Vehicle {
     this.id = vehicle.id || 0;
     this.name = vehicle.name || '';
     this.type = vehicle.type || '';
-    this.year = vehicle.year || '';
+    this.year = vehicle.year || 0;
     this.review = vehicle.review || 0;
     this.priceSell = vehicle.priceSell || 0;
     this.priceRent = vehicle.priceRent || 0;
@@ -60,6 +60,5 @@ export class Vehicle {
     this.lat = vehicle.lat || 0;
     this.lng = vehicle.lng || 0;
     this.description = vehicle.description || "";
-    this.studentId = vehicle.studentId || 0;
   }
 }

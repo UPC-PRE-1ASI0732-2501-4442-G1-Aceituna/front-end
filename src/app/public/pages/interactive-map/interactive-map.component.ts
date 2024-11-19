@@ -10,7 +10,7 @@ import {TranslateModule} from "@ngx-translate/core";
 @Component({
   selector: 'app-interactive-map',
   standalone: true,
-  imports: [GoogleMap, MapMarker, NgForOf, HeaderAcquirerComponent, TranslateModule],
+    imports: [GoogleMap, MapMarker, NgForOf, HeaderAcquirerComponent, TranslateModule],
   templateUrl: './interactive-map.component.html',
   styleUrl: './interactive-map.component.css'
 })

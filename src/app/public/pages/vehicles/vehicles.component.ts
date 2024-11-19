@@ -7,6 +7,7 @@ import {MatCardImage} from "@angular/material/card";
 import {RouterLink} from "@angular/router";
 import {HeaderComponent} from "../../components/header/header.component";
 import {TranslateModule} from "@ngx-translate/core";
+import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
 @Component({
   selector: 'app-vehicles',
   standalone: true,
@@ -15,7 +16,8 @@ import {TranslateModule} from "@ngx-translate/core";
     MatCardImage,
     RouterLink,
     TranslateModule,
-    HeaderComponent
+    HeaderComponent,
+    HeaderAcquirerComponent
   ],
   templateUrl: './vehicles.component.html',
   styleUrl: './vehicles.component.css'
@@ -38,7 +40,7 @@ export class VehiclesComponent implements OnInit {
 
   private getAllVehicles() {
     this.vehicleService.getAll().subscribe((response: Vehicle[]) => {
-        console.log(response);
+      console.log(response);
       this.vehicleData = response;
     });
   }

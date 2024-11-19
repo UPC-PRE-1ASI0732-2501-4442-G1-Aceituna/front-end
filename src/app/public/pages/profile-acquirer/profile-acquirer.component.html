@@ -1,4 +1,5 @@
 <app-header-acquirer></app-header-acquirer>
+
 <div class="min-h-screen flex flex-col justify-center items-center pt-16">
   <mat-card class="w-full max-w-3xl shadow-lg p-6">
     <!-- Encabezado: Toda la parte superior -->
@@ -12,7 +13,7 @@
       <!-- Información del usuario a la izquierda -->
       <div class="user-info">
         <h2 class="text-lg font-semibold">{{ 'name' | translate }}:</h2>
-        <p>{{ user?.name }}</p>
+        <p>{{ user?.username }}</p>
 
         <h2 class="text-lg font-semibold">{{ 'email' | translate }}:</h2>
         <p *ngIf="user?.email && user?.email !== 'example@gmail.com'">{{ user?.email }}</p>

@@ -9,6 +9,7 @@ import {MatMenuItem} from "@angular/material/menu";
 import {Router, RouterLink} from "@angular/router";
 import {HeaderComponent} from "../../components/header/header.component";
 import {TranslateModule} from "@ngx-translate/core";
+import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
 
 @Component({
   selector: 'app-vehicle-post',
@@ -21,14 +22,16 @@ import {TranslateModule} from "@ngx-translate/core";
     MatMenuItem,
     RouterLink,
     TranslateModule,
-    HeaderComponent
+    HeaderComponent,
+    HeaderAcquirerComponent
   ],
   templateUrl: './vehicle-post.component.html',
   styleUrl: './vehicle-post.component.css'
 })
 export class VehiclePostComponent implements OnInit {
   protected vehicleData: Vehicle[] = [];
-  public newVehicle: Vehicle = new Vehicle({});
+  public newVehicle!: Vehicle;
+
   private vehicleService: VehicleService = inject(VehicleService);
   private Logo = inject(LogoApiService);
   private router = inject(Router);
@@ -79,9 +82,8 @@ export class VehiclePostComponent implements OnInit {
         this.newVehicle.lat = coords.lat;
         this.newVehicle.lng = coords.lng;
         this.newVehicle.imageUrl = this.newVehicle.imageUrl || 'https://default-url.com';
-
         this.vehicleService.create(this.newVehicle).subscribe({
-          next: (response: Vehicle) => {
+          next: (response: any) => {
             this.vehicleData = [...this.vehicleData, response];
             this.newVehicle = new Vehicle({});
             this.router.navigate(['/myVehicles']).then();

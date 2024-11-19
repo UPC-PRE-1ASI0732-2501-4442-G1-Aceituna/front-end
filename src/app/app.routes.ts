@@ -21,6 +21,7 @@ import {
 import {ProfileAcquirerComponent} from "./public/pages/profile-acquirer/profile-acquirer.component";
 import {EditProfileAcquirerComponent} from "./public/pages/edit-profile-acquirer/edit-profile-acquirer.component";
 import {authenticationGuard} from "./auth/services/authentication.guard";
+import {ElectionComponent} from "./public/pages/election/election.component";
 
 
 export const routes: Routes = [
@@ -29,7 +30,7 @@ export const routes: Routes = [
   {path: 'vehicleDetails', component: VehicleDetailsComponent, canActivate: [authenticationGuard]},
   { path: 'plans', component: PlanesPageComponent, canActivate: [authenticationGuard]},
   {path: 'login', component: LogInComponent},
-
+  {path: 'election', component: ElectionComponent},
   {path: 'registerUniversity', component: RegisterUniversityStudentComponent},
   {path: 'registerAcquirer', component: RegisterAcquirerComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'},
