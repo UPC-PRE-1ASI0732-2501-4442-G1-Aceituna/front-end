@@ -4,13 +4,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PaymentService {
-  cost!:  number;
+  price!:  number;
 
-  modifyCost(cost: number) {
-    this.cost = cost;
+  modifyCost(price: number) {
+    this.price = price;
   }
 
   getCost() {
-    return this.cost;
+    return this.price;
   }
 }

@@ -74,11 +74,11 @@ export class VehiclePostComponent implements OnInit {
   }
 
   public onClick(): void {
-    if (this.newVehicle.description && this.newVehicle.type && this.newVehicle.year && this.newVehicle.salePrice && this.newVehicle.rentailPrice && this.newVehicle.name) {
+    if (this.newVehicle.description && this.newVehicle.type && this.newVehicle.year && this.newVehicle.priceSell && this.newVehicle.priceRent && this.newVehicle.name) {
       this.getCurrentLocation().then((coords) => {
         this.newVehicle.lat = coords.lat;
         this.newVehicle.lng = coords.lng;
-        this.newVehicle.url = this.newVehicle.url || 'https://default-url.com';
+        this.newVehicle.imageUrl = this.newVehicle.imageUrl || 'https://default-url.com';
 
         this.vehicleService.create(this.newVehicle).subscribe({
           next: (response: Vehicle) => {

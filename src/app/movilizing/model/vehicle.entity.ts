@@ -8,10 +8,10 @@
  * @property name: string - The name of the vehicle.
  * @property type: string - The type of the vehicle.
  * @property year: string - The year of the vehicle.
- * @property salePrice: number - The sale price of the vehicle.
- * @property rentailPrice: number - The rental price of the vehicle.
+ * @property priceSell: number - The sale price of the vehicle.
+ * @property priceRent: number - The rental price of the vehicle.
  * @property description: string - The description of the vehicle.
- * @property url: string - The URL of the vehicle.
+ * @property imageUrl: string - The imageUrl of the vehicle.
  * @property lat: number - The latitude of the vehicle.
  * @property lng: number - The longitude of the vehicle.
  */
@@ -23,14 +23,14 @@ export class Vehicle {
   name: string;
   year: string;
   review: number;
-  rentailPrice: number;
-  salePrice: number;
+  priceRent: number;
+  priceSell: number;
   isAvailable: boolean;
-  url: string;
-  description: string;
+  imageUrl: string;
   lat: number;
   lng: number;
-  student_id: number;
+  description: string;
+  studentId: number;
 
   constructor(vehicle:{
     id?: number,
@@ -38,30 +38,28 @@ export class Vehicle {
     name?: string,
     year?: string,
     review?: number;
-    rentailPrice?: number,
-    salePrice?: number,
+    priceRent?: number,
+    priceSell?: number,
     isAvailable?: boolean,
-    url?: string,
-    description?: string,
+    imageUrl?: string,
     lat?: number,
     lng?: number
-    student_id?: number
+    description?: string;
+    studentId?: number
   }){
     this.id = vehicle.id || 0;
     this.name = vehicle.name || '';
     this.type = vehicle.type || '';
     this.year = vehicle.year || '';
     this.review = vehicle.review || 0;
-    this.salePrice = vehicle.salePrice || 0;
-    this.rentailPrice = vehicle.rentailPrice || 0;
-    this.rentailPrice = vehicle.rentailPrice || 0;
+    this.priceSell = vehicle.priceSell || 0;
+    this.priceRent = vehicle.priceRent || 0;
+    this.priceRent = vehicle.priceRent || 0;
     this.isAvailable = vehicle.isAvailable || true;
-    this.description = vehicle.description || 'Esta es la descripcion del product';
-    this.url = vehicle.url || "";
+    this.imageUrl = vehicle.imageUrl || "";
     this.lat = vehicle.lat || 0;
     this.lng = vehicle.lng || 0;
-    this.student_id = vehicle.student_id || 0;
-
+    this.description = vehicle.description || "";
+    this.studentId = vehicle.studentId || 0;
   }
-
 }

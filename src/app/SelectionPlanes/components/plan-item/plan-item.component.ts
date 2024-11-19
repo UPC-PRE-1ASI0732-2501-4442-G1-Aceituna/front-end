@@ -41,7 +41,7 @@ export class PlanItemComponent {
   }
 
   onClick(){
-    this.paymentService.modifyCost(this.plan.cost);
+    this.paymentService.modifyCost(this.plan.price);
      this.router.navigate(['/payment']);
      console.log("botno presionado")
   }

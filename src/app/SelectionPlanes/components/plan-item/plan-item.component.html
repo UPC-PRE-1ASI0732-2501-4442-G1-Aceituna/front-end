@@ -6,7 +6,7 @@
     <p style="font-weight: bold" style="font-size: 30px; color:#1ACD81" >{{plan.name}}</p>
   </mat-card-header>
   <mat-card-content class="content">
-    <p style="margin-bottom: 40px; color: #939393" >Free per month and then ${{plan.cost}}/month</p>
+    <p style="margin-bottom: 40px; color: #939393" >Free per month and then ${{plan.price}}/month</p>
     @if (Number(plan.postMonth) < 100){
       <p>{{plan.postMonth}} posts per month</p>
     } @else {

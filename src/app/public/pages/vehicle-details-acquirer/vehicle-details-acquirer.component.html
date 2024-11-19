@@ -13,7 +13,7 @@
       <p>{{ vehicleData?.type | uppercase }}</p>
       <p>{{ vehicleData?.name }}</p>
       <p>{{ 'year' | translate }}: {{ vehicleData?.year }}</p>
-      <p>{{ 'price' | translate }}: {{ vehicleData?.salePrice }}</p>
+      <p>{{ 'price' | translate }}: {{ vehicleData?.priceRent }}</p>
       <div class="mt-4">
         <button class="bg-customGreen hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
           {{ 'rent' | translate }}
@@ -24,7 +24,7 @@
     <div class="flex flex-col items-start px-4 py-4 space-y-4">
       <div class="w-full flex justify-center mb-4">
         <img [alt]="vehicleData?.name"
-             [src]="getLogoUrl(vehicleData?.url)"
+             [src]="getLogoUrl(vehicleData?.imageUrl)"
              class="w-32 h-32 object-cover rounded-lg"
              mat-card-image />
       </div>

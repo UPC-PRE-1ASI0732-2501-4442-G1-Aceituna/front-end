@@ -22,17 +22,19 @@ import {ProfileAcquirerComponent} from "./public/pages/profile-acquirer/profile-
 import {EditProfileAcquirerComponent} from "./public/pages/edit-profile-acquirer/edit-profile-acquirer.component";
 import {authenticationGuard} from "./auth/services/authentication.guard";
 
+
 export const routes: Routes = [
-  {path:'myVehicles', component: VehiclesComponent},
-  {path: 'postVehicle', component: VehiclePostComponent},
-  {path: 'vehicleDetails', component: VehicleDetailsComponent },
-  { path: 'plans', component: PlanesPageComponent},
+  {path:'myVehicles', component: VehiclesComponent, canActivate: [authenticationGuard]},
+  {path: 'postVehicle', component: VehiclePostComponent, canActivate: [authenticationGuard]},
+  {path: 'vehicleDetails', component: VehicleDetailsComponent, canActivate: [authenticationGuard]},
+  { path: 'plans', component: PlanesPageComponent, canActivate: [authenticationGuard]},
   {path: 'login', component: LogInComponent},
+
   {path: 'registerUniversity', component: RegisterUniversityStudentComponent},
   {path: 'registerAcquirer', component: RegisterAcquirerComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'},
-  {path: 'sellerProfile', component: ProfileUniversityComponent},
-  {path: 'sellereditProfile', component: ProfilePageComponent},
+  {path: 'sellerProfile', component: ProfileUniversityComponent, canActivate: [authenticationGuard]},
+  {path: 'sellereditProfile', component: ProfilePageComponent, canActivate: [authenticationGuard]},
   {path: 'dashboard', component: DashboardPageComponent,
     children:[
       {
@@ -46,12 +48,13 @@ export const routes: Routes = [
         pathMatch: 'full'
       }
     ]
+    , canActivate: [authenticationGuard]
   },
-  { path: 'payment', component: PaymentPageComponent }, // Ruta para "payment"
-  {path: 'home', component: HomeAcquirerComponent}, //, canActivate: [authenticationGuard]
-  {path: 'interactiveMap', component: InteractiveMapComponent},
-  {path: 'filter', component: FilterAcquirerComponent},
-  {path: 'vehicleDetailsAcquirer', component: VehicleDetailsAcquirerComponent},
-  {path: 'profileAdquiriente', component: ProfileAcquirerComponent},
-  {path: 'editProfileAcquirer', component: EditProfileAcquirerComponent}
+  { path: 'payment', component: PaymentPageComponent , canActivate: [authenticationGuard]}, // Ruta para "payment"
+  {path: 'home', component: HomeAcquirerComponent, canActivate: [authenticationGuard]},//, canActivate: [authenticationGuard]
+  {path: 'interactiveMap', component: InteractiveMapComponent, canActivate: [authenticationGuard]},
+  {path: 'filter', component: FilterAcquirerComponent, canActivate: [authenticationGuard]},
+  {path: 'vehicleDetailsAcquirer', component: VehicleDetailsAcquirerComponent, canActivate: [authenticationGuard]},
+  {path: 'profileAdquiriente', component: ProfileAcquirerComponent, canActivate: [authenticationGuard]},
+  {path: 'editProfileAcquirer', component: EditProfileAcquirerComponent, canActivate: [authenticationGuard]},
 ];

@@ -27,7 +27,7 @@ export class RegisterAcquirerComponent implements OnInit {
   submitted: boolean = false;
   constructor(private authenticationService: AuthenticationService ) { }
   ngOnInit(): void {
-    this.form.role.push('ROLE_USER');
+    this.form.role.push('ROLE_ADMIN');
   }
   onSubmit(): void {
    // if (this.form.invalid) return;
