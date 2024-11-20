@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
  /*  'https://my-json-server.typicode.com/Open-Source-SW56-Group-2-EcoMovil/Json-Server-EcoMovil' */
-  serverBasePath: 'http://localhost:8080/api/v1'
+  serverBasePath: 'https://app-241119182046.azurewebsites.net/api/v1'
 };
