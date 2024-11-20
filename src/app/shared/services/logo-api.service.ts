@@ -4,7 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LogoApiService {
-  baseUrl = 'https://logo.clearbit.com/';
+  baseUrl = 'https://i.ibb.co/';
+  endUrl = '/image.png'
 
   constructor() { }
 

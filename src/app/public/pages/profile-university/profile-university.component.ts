@@ -1,12 +1,17 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {NgIf, NgOptimizedImage} from "@angular/common";
-import {UserService} from "../../../auth/services/user.service";
 import {LogoApiService} from "../../../shared/services/logo-api.service";
 import { MatCard, MatCardActions, MatCardAvatar, MatCardContent, MatCardHeader, MatCardTitle, MatCardSubtitle } from "@angular/material/card";
 import {MatButton} from "@angular/material/button";
 import {MatCheckbox} from "@angular/material/checkbox";
 import {RouterLink} from "@angular/router";
 import {HeaderComponent} from "../../components/header/header.component";
+import {TranslateModule} from "@ngx-translate/core";
+import {UserService} from "../../../auth/services/user.service";
+import {AuthenticationService} from "../../../auth/services/authentication.service";
+import {ProfileApiService} from "../../../ProfileAcquirers/services/profile-api.service";
+import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
+
 @Component({
   selector: 'app-profile-university',
   standalone: true,
@@ -23,24 +28,30 @@ import {HeaderComponent} from "../../components/header/header.component";
     MatButton,
     MatCheckbox,
     RouterLink,
-    HeaderComponent
+    TranslateModule,
+    HeaderComponent,
+    HeaderAcquirerComponent
   ],
   templateUrl: './profile-university.component.html',
   styleUrl: './profile-university.component.css'
 })
 
 export class ProfileUniversityComponent implements OnInit {
+  private id!: number;
   private Logo = inject(LogoApiService);
-    user: any = {};  // Cambiado a un solo objeto
+  user: any = {};  // Cambiado a un solo objeto
   options = [
       {path: '/sellereditProfile', title: 'sellereditProfile'}
 
   ]
 
-  constructor(private userService: UserService) { }
+  constructor(private profileService: ProfileApiService,private userService: UserService, private authService: AuthenticationService) { }
     ngOnInit(): void {
         // Llamada al servicio para obtener un solo usuario
-        this.userService.getUserById(1).subscribe(data => {
+      this.id = this.authService.id
+      console.log(`El iddd es ${this.id}`);
+
+        this.userService.getbyId(this.id).subscribe(data => {
             this.user = data;
             console.log('Usuario obtenido:', this.user);
         });

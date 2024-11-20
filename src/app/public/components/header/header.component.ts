@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {MatAnchor, MatButton} from "@angular/material/button";
 import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
 import {RouterLink} from "@angular/router";
+import {LanguageSwitcherComponent} from "../language-switcher/language-switcher.component";
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,8 @@ import {RouterLink} from "@angular/router";
     MatMenuItem,
     MatMenuTrigger,
     MatAnchor,
-    RouterLink
+    RouterLink,
+    LanguageSwitcherComponent
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'

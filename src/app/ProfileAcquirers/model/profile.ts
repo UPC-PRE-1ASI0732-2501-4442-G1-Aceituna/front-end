@@ -17,18 +17,21 @@ export class Profile {
   email: string;
   phone: string;
   image : string;
-
+  ruc: string;
   constructor(profile:{
     id?: number,
     name?: string,
     email?: string,
     phone?: string,
-    image?: string}) {
+    image?: string,
+    ruc?: string}) {
     this.id = profile.id || 0;
     this.name = profile.name || "";
     this.email = profile.email || "";
     this.phone = profile.phone || "";
     this.image = profile.image || "";
+    this.ruc = profile.ruc || "";
+
   }
 
 }

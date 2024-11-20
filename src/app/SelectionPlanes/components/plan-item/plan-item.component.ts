@@ -6,8 +6,7 @@ import {
   MatCardContent,
   MatCardFooter,
   MatCardHeader,
-  MatCardImage,
-  MatCardModule
+  MatCardImage
 } from "@angular/material/card";
 import {MatIcon} from "@angular/material/icon";
 import {MatFabAnchor} from "@angular/material/button";
@@ -41,7 +40,7 @@ export class PlanItemComponent {
   }
 
   onClick(){
-    this.paymentService.modifyCost(this.plan.cost);
+    this.paymentService.modifyCost(this.plan.price);
      this.router.navigate(['/payment']);
      console.log("botno presionado")
   }
