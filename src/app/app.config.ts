@@ -7,6 +7,7 @@ import {HttpClient, provideHttpClient, withInterceptors} from "@angular/common/h
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {authenticationInterceptor} from "./auth/services/authentication.interceptor";
 
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }

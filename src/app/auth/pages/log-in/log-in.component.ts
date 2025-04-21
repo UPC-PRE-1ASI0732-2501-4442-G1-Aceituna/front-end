@@ -18,38 +18,50 @@ import {ProfileAccountService} from "../../../ProfileAcquirers/services/profile-
   templateUrl: './log-in.component.html',
   styleUrl: './log-in.component.css'
 })
-export class LogInComponent implements OnInit{
-  form={
+export class LogInComponent implements OnInit {
+  form = {
     username: '',
     password: ''
-  }
+  };
 
   profile = {
     firstName: '',
     lastName: '',
     email: '',
     phoneNumber: ''
-  }
+  };
 
   submitted = false;
-  constructor(private router: Router, private authenticationService: AuthenticationService, private profileService: ProfileApiService, private profileAccountService: ProfileAccountService) { }
-  ngOnInit(): void {
 
-  }
+  constructor(
+    private router: Router,
+    private authenticationService: AuthenticationService,
+    private profileService: ProfileApiService,
+    private profileAccountService: ProfileAccountService
+  ) {}
+
+  ngOnInit(): void {}
+
   onSubmit(): void {
-    console.log(this.form);
-    console.log('btoton presionado');
+    console.log('Formulario enviado:', this.form);
+    const signInRequest = new SignInRequest(this.form.username, this.form.password);
 
-    //if (this.form.invalid) return;
-    let username = this.form.username;
-    let password = this.form.password;
-    const signInRequest = new SignInRequest(username, password);
-    this.authenticationService.signIn(signInRequest);
-    this.submitted = true;
-
-    this.profileService.create(this.profileAccountService.getProfile()).subscribe((response: any) => {
-      console.log(response);
-      this.profile = response;
+    this.authenticationService.signIn(signInRequest).subscribe({
+      next: (response) => {
+        if (response && response.token) {
+          localStorage.setItem('token', response.token);
+          this.router.navigate(['/election']);
+        } else {
+          console.error('No se recibió un token válido.');
+          alert('Credenciales incorrectas. Intenta de nuevo.');
+          this.router.navigate(['/login']); // 👈 Fuerza retorno al login
+        }
+      },
+      error: (err) => {
+        console.error('Error al iniciar sesión:', err);
+        alert('Usuario o contraseña incorrectos.');
+        this.router.navigate(['/login']); // 👈 También redirige manualmente en error
+      }
     });
   }
 }
