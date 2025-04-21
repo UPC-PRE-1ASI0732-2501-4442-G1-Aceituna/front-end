@@ -6,7 +6,6 @@
 
 export const environment = {
   production: true,
-//  serverBasePath: 'https://my-json-server.typicode.com/Open-Source-SW56-Group-2-EcoMovil/Json-Server-EcoMovil',
-  serverBasePath: 'https://app-241119182046.azurewebsites.net/api/v1',
+  serverBasePath: 'https://app-250421124000.azurewebsites.net/api/v1',
   keyGoogle:'AIzaSyDMV3i8LKs4cJYqnT0I_hwv-mw_u55x4VE'
 };

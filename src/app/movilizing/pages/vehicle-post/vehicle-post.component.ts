@@ -30,7 +30,7 @@ import {HeaderAcquirerComponent} from "../../../public/components/header-acquire
 })
 export class VehiclePostComponent implements OnInit {
   protected vehicleData: Vehicle[] = [];
-  public newVehicle!: Vehicle;
+  public newVehicle: Vehicle = new Vehicle({}); // Initialize the object here
 
   private vehicleService: VehicleService = inject(VehicleService);
   private Logo = inject(LogoApiService);
@@ -40,9 +40,6 @@ export class VehiclePostComponent implements OnInit {
     {path: '/myVehicles', title: 'My Vehicles'}]
 
   constructor() {}
-
-
-
 
   ngOnInit(): void {
     this.getAllVehicles();
@@ -54,7 +51,7 @@ export class VehiclePostComponent implements OnInit {
       this.vehicleData = response;
     });
   }
-//add new vehicle
+
   private getCurrentLocation(): Promise<{ lat: number, lng: number }> {
     return new Promise((resolve, reject) => {
       if (navigator.geolocation) {
@@ -85,7 +82,7 @@ export class VehiclePostComponent implements OnInit {
         this.vehicleService.create(this.newVehicle).subscribe({
           next: (response: any) => {
             this.vehicleData = [...this.vehicleData, response];
-            this.newVehicle = new Vehicle({});
+            this.newVehicle = new Vehicle({}); // Reset the object after submission
             this.router.navigate(['/myVehicles']).then();
           },
           error: (err) => {
