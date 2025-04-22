@@ -13,9 +13,9 @@
 
 export class Profile {
   id: number;
-  name: string;
+  fullName: string;
   email: string;
-  phone: string;
+  phoneNumber: string;
   image : string;
   ruc: string;
   constructor(profile:{
@@ -26,9 +26,9 @@ export class Profile {
     image?: string,
     ruc?: string}) {
     this.id = profile.id || 0;
-    this.name = profile.name || "";
+    this.fullName = profile.name || "";
     this.email = profile.email || "";
-    this.phone = profile.phone || "";
+    this.phoneNumber = profile.phone || "";
     this.image = profile.image || "";
     this.ruc = profile.ruc || "";
 

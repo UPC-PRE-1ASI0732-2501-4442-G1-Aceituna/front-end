@@ -39,13 +39,8 @@ export class AuthenticationService {
     return this.signedInUsername.asObservable();
   }
 
-  signUp(signUpRequest: SignUpRequest): Observable<SignUpResponse> {
-    return this.http.post<SignUpResponse>(
-      `${this.basePath}/authentication/sign-up`,
-      signUpRequest,
-      this.httpOptions
-    );
-  }
+  signUp(request: SignUpRequest): Observable<any> {
+    return this.http.post(`${this.basePath}/authentication/sign-up`, request, this.httpOptions);  }
 
   signIn(signInRequest: SignInRequest): Observable<SignInResponse> {
     console.log('entra al sign in');

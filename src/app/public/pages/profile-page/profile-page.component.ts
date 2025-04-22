@@ -6,6 +6,7 @@ import {ConfirmationComponent} from "../../../ProfileAcquirers/components/confir
 import {UserService} from "../../../auth/services/user.service";
 import {User} from "../../../auth/model/user.entity";
 import {HeaderComponent} from "../../components/header/header.component";
+import {take} from "rxjs";
 
 @Component({
   selector: 'app-profile-page',
@@ -22,20 +23,37 @@ export class ProfilePageComponent implements OnInit {
   user: any;
   @ViewChild('confirmation') confirmation!: ConfirmationComponent;
 
-  constructor(private userService: UserService) { }
+  constructor(private profileService: ProfileApiService) { }
 
   ngOnInit(): void {
-    this.userService.getUserById(1).subscribe(data => {
+    this.profileService.getMyProfile().subscribe(data => {
       this.user = data;
     });
   }
 
   userChange(updatedUser: any) {
-    this.userService.updateUser(this.user.id, updatedUser).subscribe((data: any) => {
-      console.log('Usuario actualizado:', data);
+    const [firstName, lastName] = updatedUser.fullName.split(' ');
 
-      this.confirmation.message = 'Datos actualizados correctamente!';
-      this.confirmation.show();
-    });
+    const payload = {
+      firstName: firstName || '',
+      lastName: lastName || '',
+      email: updatedUser.email,
+      phoneNumber: updatedUser.phoneNumber,
+      ruc: updatedUser.ruc,
+      planId: updatedUser.planId
+    };
+
+    this.profileService.updateProfile(payload)
+      .pipe(take(1))  // <-- toma solo 1 emisión y se auto-cierra
+      .subscribe({
+        next: (data) => {
+          console.log('✅ Perfil actualizado:', data);
+          this.confirmation.message = 'Datos actualizados correctamente!';
+          this.confirmation.show();
+        },
+        error: (err) => {
+          console.error('❌ Error al actualizar perfil:', err);
+        }
+      });
   }
 }

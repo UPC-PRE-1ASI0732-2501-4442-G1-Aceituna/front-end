@@ -33,22 +33,35 @@ export class RegisterAcquirerComponent implements OnInit {
   }
 
   submitted: boolean = false;
+  termsAccepted: boolean = false;
   constructor(private authenticationService: AuthenticationService, private profileAccountService: ProfileAccountService) { }
   ngOnInit(): void {
     this.form.role.push('ROLE_ADMIN');
   }
   onSubmit(): void {
-   // if (this.form.invalid) return;
-    let username = this.form.username;
-    let password = this.form.password;
-    let email = this.form.email;
+    if (!this.termsAccepted) {
+      alert('Debes aceptar los términos y condiciones');
+      return;
+    }
+
+    const { username, password, email } = this.form;
     const signUpRequest = new SignUpRequest(username, password, email);
-    this.authenticationService.signUp(signUpRequest);
-    this.profile.firstName=username;
-    this.profile.lastName=username;
-    this.profile.email=email;
-    this.profile.phoneNumber='000000000';
-    this.profileAccountService.addAccount(this.profile);
-    this.submitted = true;
+
+    this.authenticationService.signUp(signUpRequest).subscribe({
+      next: () => {
+        this.profile.firstName = username;
+        this.profile.lastName = username;
+        this.profile.email = email;
+        this.profile.phoneNumber = '000000000';
+
+        this.profileAccountService.addAccount(this.profile); // ✅ Ya no es un Observable
+        this.submitted = true;
+        window.location.href = '/login'; // O mejor: this.router.navigate(['/login']);
+      },
+      error: err => {
+        alert('Error al registrarse');
+        console.error(err);
+      }
+    });
   }
 }

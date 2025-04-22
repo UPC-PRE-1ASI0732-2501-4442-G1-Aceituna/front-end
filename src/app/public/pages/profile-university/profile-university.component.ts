@@ -48,13 +48,10 @@ export class ProfileUniversityComponent implements OnInit {
   constructor(private profileService: ProfileApiService,private userService: UserService, private authService: AuthenticationService) { }
     ngOnInit(): void {
         // Llamada al servicio para obtener un solo usuario
-      this.id = this.authService.id
-      console.log(`El iddd es ${this.id}`);
-
-        this.userService.getbyId(this.id).subscribe(data => {
-            this.user = data;
-            console.log('Usuario obtenido:', this.user);
-        });
+      this.profileService.getMyProfile().subscribe(data => {
+        this.user = data;
+        console.log('Perfil obtenido:', this.user);
+      });
     }
   getLogoUrl(url: string | undefined) {
     return this.Logo.getUrlToLogo(url);

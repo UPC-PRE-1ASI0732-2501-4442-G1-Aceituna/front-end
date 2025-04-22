@@ -34,9 +34,9 @@ export class ProfileComponent {
   }
 
   updateProfile(){
-    this.profile.name = this.profileForm.get('name')?.value ?? '';
+    this.profile.fullName = this.profileForm.get('name')?.value ?? '';
     this.profile.email = this.profileForm.get('email')?.value ?? '';
-    this.profile.phone = this.profileForm.get('phone')?.value ?? '';
+    this.profile.phoneNumber = this.profileForm.get('phone')?.value ?? '';
   }
 
 }

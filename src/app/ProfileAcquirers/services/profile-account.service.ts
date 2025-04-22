@@ -1,21 +1,20 @@
-import { Injectable } from '@angular/core';
+
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import {Injectable} from "@angular/core";
+import {environment} from "../../../environments/environment";
+
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileAccountService {
-  profile = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phoneNumber: ''
+  private profile: any = {};
+
+  public addAccount(data: any): void {
+    this.profile = data;
   }
 
-  constructor() { }
-
-  public addAccount(data: any) {
-    this.profile=data;
-  }
-  public getProfile(){
+  public getProfile(): any {
     return this.profile;
   }
 }
