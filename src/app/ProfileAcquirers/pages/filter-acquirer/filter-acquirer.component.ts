@@ -9,6 +9,7 @@ import { MatSelectModule } from '@angular/material/select';
 import {HeaderAcquirerComponent} from "../../../public/components/header-acquirer/header-acquirer.component";
 import {TranslateModule} from "@ngx-translate/core";
 import {HeaderComponent} from "../../../public/components/header/header.component";
+import {RouterLink} from "@angular/router";
 @Component({
   selector: 'app-filter-acquirer',
   standalone: true,
@@ -20,7 +21,9 @@ import {HeaderComponent} from "../../../public/components/header/header.componen
     TranslateModule,
     HeaderAcquirerComponent,
     HeaderComponent,
-    NgIf
+    NgIf,
+    RouterLink
+
   ],
   templateUrl: './filter-acquirer.component.html',
   styleUrls: ['./filter-acquirer.component.css']
@@ -53,12 +56,24 @@ export class FilterAcquirerComponent implements OnInit {
   // Función para filtrar por tipo de vehículo
   onTypeChange(type: string) {
     this.selectedType = type;
-    // Aquí puedes agregar lógica para filtrar la lista de vehículos por tipo
+
+    if (type === 'All types') {
+      this.getAllVehicles();
+    } else {
+      this.vehicleService.getByType(type).subscribe((response: Vehicle[]) => {
+        this.vehicleData = response;
+      });
+    }
   }
 
   // Función para ordenar por precio
   onPriceChange(price: string) {
     this.selectedPrice = price;
-    // Aquí puedes agregar lógica para ordenar la lista de vehículos por precio
+
+    if (price === 'Lowest to Highest') {
+      this.vehicleData.sort((a, b) => a.priceSell - b.priceSell);
+    } else {
+      this.vehicleData.sort((a, b) => b.priceSell - a.priceSell);
+    }
   }
 }

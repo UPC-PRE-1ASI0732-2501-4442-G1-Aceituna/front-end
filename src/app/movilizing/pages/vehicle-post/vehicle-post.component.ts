@@ -78,7 +78,7 @@ export class VehiclePostComponent implements OnInit {
       this.getCurrentLocation().then((coords) => {
         this.newVehicle.lat = coords.lat;
         this.newVehicle.lng = coords.lng;
-        this.newVehicle.imageUrl = this.newVehicle.imageUrl || 'https://default-url.com';
+        this.newVehicle.imageUrl = this.newVehicle.imageUrl || 'https://www.oxfordstore.pe/media/catalog/product/cache/aae873136fa0fde5dba4b938a53c66f6/b/d/bd2979_sierra_29_negro_2021_01.jpg';
         this.vehicleService.create(this.newVehicle).subscribe({
           next: (response: any) => {
             this.vehicleData = [...this.vehicleData, response];

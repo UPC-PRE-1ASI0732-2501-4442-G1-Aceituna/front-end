@@ -56,4 +56,7 @@ export class ProfileUniversityComponent implements OnInit {
   getLogoUrl(url: string | undefined) {
     return this.Logo.getUrlToLogo(url);
   }
+  getFirstName(fullName: string): string {
+    return fullName?.split(' ')[0] || '';
+  }
 }
