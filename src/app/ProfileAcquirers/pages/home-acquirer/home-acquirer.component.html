@@ -23,6 +23,12 @@
             <!-- {{ 'edit_profile' | translate }} -->
             <p class="rounded text-customGreen">{{ 'rental' | translate }}: ${{ vehicle.priceRent }} / Hora</p>
           </div>
+          <button
+            class="bg-customGreen text-white px-4 py-2 rounded mt-2"
+            [routerLink]="['/vehicleDetailsAcquirer', vehicle.id]"
+            (click)="redirectToVehicleDetails(vehicle.id)">
+            {{ 'view_details' | translate }}
+          </button>
         </div>
       </div>
     </div>

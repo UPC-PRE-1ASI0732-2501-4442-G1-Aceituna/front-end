@@ -11,4 +11,8 @@ export class VehicleService extends BaseService<Vehicle> {
     super();
     this.resourceEndPoint = '/vehicles';
   }
+
+  getMyVehicles() {
+    return this.http.get<Vehicle[]>(`https://app-250421124000.azurewebsites.net/api/v1/vehicles/my-vehicles`);
+  }
 }

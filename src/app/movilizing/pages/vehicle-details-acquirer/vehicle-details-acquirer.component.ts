@@ -9,6 +9,7 @@ import {LogoApiService} from "../../../shared/services/logo-api.service";
 import {HeaderAcquirerComponent} from "../../../public/components/header-acquirer/header-acquirer.component";
 import {HeaderComponent} from "../../../public/components/header/header.component";
 import {TranslateModule} from "@ngx-translate/core";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-vehicle-details-acquirer',
@@ -30,6 +31,7 @@ import {TranslateModule} from "@ngx-translate/core";
 export class VehicleDetailsAcquirerComponent implements OnInit{
   protected vehicleData: Vehicle | null = null;
   private vehicleService: VehicleService = inject(VehicleService);
+  private route = inject(ActivatedRoute); // ✅ inject aquí también
   private Logo = inject(LogoApiService);
   value?: number;
 
@@ -42,15 +44,21 @@ export class VehicleDetailsAcquirerComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    //cambiar luego xd cuanod juan termine el filter
-    this.getVehiclebyId(5);
-    this.randomRating()
+    const idParam = this.route.snapshot.paramMap.get('id'); // 👈 captura de la ruta
+    const id = idParam ? +idParam : null;
+
+    if (id) {
+      this.getVehiclebyId(id);
+    } else {
+      console.error('No se proporcionó un ID de vehículo en la ruta.');
+    }
+
+    this.randomRating();
   }
 
   private getVehiclebyId(id: number) {
     this.vehicleService.getbyId(id).subscribe((response: Vehicle) => {
-      console.log(response);
-      console.log('aqui esta el vehiculo');
+      console.log('🚗 Vehículo recibido:', response);
       this.vehicleData = response;
     });
   }

@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {HeaderComponent} from "../../../public/components/header/header.component";
 import {MatCardImage} from "@angular/material/card";
 import {NgForOf} from "@angular/common";
@@ -8,6 +8,7 @@ import {VehicleService} from "../../../movilizing/services/vehicle.service";
 import {Vehicle} from "../../../movilizing/model/vehicle.entity";
 import {HeaderAcquirerComponent} from "../../../public/components/header-acquirer/header-acquirer.component";
 import {TranslateModule} from "@ngx-translate/core";
+
 
 @Component({
   selector: 'app-home-acquirer',
@@ -23,7 +24,7 @@ import {TranslateModule} from "@ngx-translate/core";
   templateUrl: './home-acquirer.component.html',
   styleUrl: './home-acquirer.component.css'
 })
-export class HomeAcquirerComponent {
+export class HomeAcquirerComponent implements OnInit{
   protected vehicleData: Vehicle[] = [];
   private vehicleService: VehicleService = inject(VehicleService);
   private Logo = inject(LogoApiService);
@@ -37,10 +38,15 @@ export class HomeAcquirerComponent {
     this.getAllVehicles();
   }
 
+  public redirectToVehicleDetails(vehicleId: number): void {
+    console.log('Redirecting to vehicle ID:', vehicleId);
+  }
+
   private getAllVehicles() {
-    this.vehicleService.getAll().subscribe((response: Vehicle[]) => {
-      console.log(response);
-      this.vehicleData = response;
+    this.vehicleService.getAll().subscribe((response: any[]) => {
+      console.log('🚗 Vehículos cargados:', response);
+      this.vehicleData = response.map(v => new Vehicle(v)); // <-- Esto lo arregla
     });
   }
+
 }

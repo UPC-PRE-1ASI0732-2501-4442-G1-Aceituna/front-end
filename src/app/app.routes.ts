@@ -55,7 +55,7 @@ export const routes: Routes = [
   {path: 'home', component: HomeAcquirerComponent, canActivate: [authenticationGuard]},//, canActivate: [authenticationGuard]
   {path: 'interactiveMap', component: InteractiveMapComponent, canActivate: [authenticationGuard]},
   {path: 'filter', component: FilterAcquirerComponent, canActivate: [authenticationGuard]},
-  {path: 'vehicleDetailsAcquirer', component: VehicleDetailsAcquirerComponent, canActivate: [authenticationGuard]},
+  { path: 'vehicleDetailsAcquirer/:id', component: VehicleDetailsAcquirerComponent, canActivate: [authenticationGuard] },
   {path: 'profileAdquiriente', component: ProfileAcquirerComponent, canActivate: [authenticationGuard]},
   {path: 'editProfileAcquirer', component: EditProfileAcquirerComponent, canActivate: [authenticationGuard]},
 ];

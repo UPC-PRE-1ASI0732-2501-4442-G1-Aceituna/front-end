@@ -39,8 +39,8 @@ export class VehiclesComponent implements OnInit {
   }
 
   private getAllVehicles() {
-    this.vehicleService.getAll().subscribe((response: Vehicle[]) => {
-      console.log(response);
+    this.vehicleService.getMyVehicles().subscribe((response: Vehicle[]) => {
+      console.log('🚗 Mis vehículos:', response);
       this.vehicleData = response;
     });
   }

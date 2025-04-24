@@ -20,6 +20,11 @@
             <p class="rounded text-customGreen" >Sale: ${{ vehicle.salePrice }}</p>
             <p class="rounded text-customGreen">Rental: ${{ vehicle.rentailPrice }} / Hora</p>
           </div>
+          <button
+            class="mt-2 bg-customGreen hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            [routerLink]="['/vehicles', vehicle.id]">
+            View More
+          </button>
         </div>
       </div>
     </div>
