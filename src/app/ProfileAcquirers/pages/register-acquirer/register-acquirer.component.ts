@@ -5,6 +5,7 @@ import {AuthenticationService} from "../../../auth/services/authentication.servi
 import {SignUpRequest} from "../../../auth/model/sign-up.request";
 import {FormsModule} from "@angular/forms";
 import {ProfileAccountService} from "../../services/profile-account.service";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-register-acquirer',
@@ -12,7 +13,8 @@ import {ProfileAccountService} from "../../services/profile-account.service";
   imports: [
     TranslateModule,
     RouterLink,
-    FormsModule
+    FormsModule,
+    NgIf
   ],
   templateUrl: './register-acquirer.component.html',
   styleUrl: './register-acquirer.component.css'
@@ -34,10 +36,21 @@ export class RegisterAcquirerComponent implements OnInit {
 
   submitted: boolean = false;
   termsAccepted: boolean = false;
+  showTermsModal = false;
+
+  openTermsModal(){
+    this.showTermsModal = true;
+  }
+
+  closeTermsModal(){
+    this.showTermsModal = false;
+  }
+
   constructor(private authenticationService: AuthenticationService, private profileAccountService: ProfileAccountService) { }
   ngOnInit(): void {
     this.form.role.push('ROLE_ADMIN');
   }
+
   onSubmit(): void {
     if (!this.termsAccepted) {
       alert('Debes aceptar los términos y condiciones');
