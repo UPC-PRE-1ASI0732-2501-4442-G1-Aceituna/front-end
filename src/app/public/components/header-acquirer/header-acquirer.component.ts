@@ -23,10 +23,7 @@ export class HeaderAcquirerComponent {
   options = [
     {path: '/home', title: 'Home'},
     {path: '/interactiveMap', title: 'Map'},
-    {path:'/filter', title: 'Filter'},
-    {path:'/vehicleDetailsAcquirer', title: 'VehicleDetails'},
-    {path: '/profileAdquiriente', title: 'My Profile'},
-    {path: '/editProfileAcquirer', title: 'Edit Profile'},
+    {path:'/filter', title: 'Filter'}
   ]
   optionsLogin = [
     {path:'/login', title: 'Log Out'}

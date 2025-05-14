@@ -60,8 +60,17 @@ export class FilterAcquirerComponent implements OnInit {
     if (type === 'All types') {
       this.getAllVehicles();
     } else {
-      this.vehicleService.getByType(type).subscribe((response: Vehicle[]) => {
-        this.vehicleData = response;
+      this.vehicleService.getByType(type).subscribe({
+        next: (response: Vehicle[]) => {
+          this.vehicleData = response;
+        },
+        error: (err) => {
+          if (err.status === 404) {
+            this.vehicleData = []; // Trigger the 'no vehicles available' template
+          } else {
+            console.error('Error fetching vehicles by type:', err);
+          }
+        }
       });
     }
   }
